@@ -1,0 +1,8 @@
+﻿.lbl {
+    color: var(--neutral-600);
+    font-size: px(13);
+
+    @include mq(min, w, sm-tab) {
+        font-size: px(14);
+    }
+}

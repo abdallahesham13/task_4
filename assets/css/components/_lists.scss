@@ -1,0 +1,219 @@
+﻿.info-comp {
+    width: px(20);
+    height: px(20);
+    @include border-radius(50%);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--gradient);
+    cursor: pointer;
+    position: relative;
+
+    @include breakpoints(md) {
+        width: px(18);
+        height: px(18);
+
+        svg {
+            font-size: px(12);
+        }
+    }
+
+    &:hover, &:focus, &:focus-within {
+        .info-comp-table {
+            visibility: visible;
+            opacity: 1;
+            display: block;
+            animation: showing 0.6s;
+            top: 200%;
+            right: 0;
+            pointer-events: auto;
+
+            @include breakpoints(xs) {
+                right: auto
+            }
+        }
+    }
+
+    &:hover {
+        .info-comp-table.show {
+            display: block;
+            animation: showing 0.6s;
+            top: 200%;
+            right: 0;
+
+            @include breakpoints(xs) {
+                right: auto;
+            }
+        }
+    }
+
+    .icon {
+        color: var(--neutral-50);
+        font-size: px(12);
+    }
+
+    .i-icon {
+        width: 1.06rem;
+        height: 1.06rem;
+        background-image: url('data:image/svg+xml,<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.57916 5.64095C8.27556 5.64095 8.01506 5.54027 7.79776 5.33892C7.58356 5.13438 7.47656 4.88988 7.47656 4.60543C7.47656 4.32418 7.58356 4.08289 7.79776 3.88154C8.01506 3.67699 8.27556 3.57472 8.57916 3.57472C8.88276 3.57472 9.14166 3.67699 9.35576 3.88154C9.57316 4.08289 9.68176 4.32418 9.68176 4.60543C9.68176 4.88988 9.57316 5.13438 9.35576 5.33892C9.14166 5.54027 8.88276 5.64095 8.57916 5.64095Z" fill="%23ffffff"/><path d="M7.97656 13.5045C7.70036 13.5045 7.47656 13.2806 7.47656 13.0045V7.14095C7.47656 6.86475 7.70036 6.64095 7.97656 6.64095H9.01876C9.29496 6.64095 9.51876 6.86475 9.51876 7.14095V13.0045C9.51876 13.2806 9.29496 13.5045 9.01876 13.5045H7.97656Z" fill="%23ffffff"/></svg>');
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    &-table {
+        min-width: px(200);
+        max-width: px(220);
+        padding: 0.82rem;
+        @include border-radius(3px);
+        position: absolute;
+        top: 105%;
+        right: 15%;
+        z-index: 9;
+        color: var(--neutral-50);
+        background-color: var(--neutral-50);
+        transition: all 0.3s ease-in 0s;
+        cursor: auto;
+        overflow-x: auto;
+        box-shadow: var(--kit-shadow);
+
+        @include scroll();
+
+        &::before {
+            content: "";
+            width: 100%;
+            height: 4rem;
+            position: absolute;
+            top: -5%;
+            right: 6px;
+            transform: translate(0, -50%);
+            z-index: -1;
+            background: transparent;
+            cursor: pointer;
+
+            @include breakpoints(xs) {
+                display: none;
+            }
+        }
+
+        &::after {
+            content: "";
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: -20px;
+            right: 0;
+            background-image: url('data:image/svg+xml,<svg width="30" height="29" viewBox="0 0 40 39" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_1321_158666)"><path d="M18.233 3.33254C18.9846 1.91507 21.0154 1.91506 21.767 3.33254L38.3614 34.6297C39.0677 35.9617 38.1021 37.5666 36.5944 37.5666H3.4056C1.8979 37.5666 0.932339 35.9617 1.63862 34.6297L18.233 3.33254Z" fill="white"/></g><defs><clipPath id="clip0_1321_158666"><rect width="40" height="39" fill="white"/></clipPath></defs></svg>');
+            background-repeat: no-repeat;
+            background-position: center;
+            cursor: pointer;
+
+            @include breakpoints(xs) {
+                display: none;
+            }
+        }
+
+        @include mq(min, w, xs) {
+            min-width: px(400);
+            max-width: none;
+        }
+
+        @include mq(min, w, sm) {
+            --info-table-comp-min-w: 450px;
+        }
+
+        @include breakpoints(xs) {
+            right: auto;
+        }
+
+        &:not(.show) {
+            display: none;
+        }
+
+        &.show {
+            display: block;
+            animation: showing 0.6s;
+            top: 200%;
+            pointer-events: auto;
+            right: 0;
+
+            @include breakpoints(xs) {
+                right: auto;
+            }
+        }
+
+        &.with-fixed-height {
+            overflow: visible;
+
+            @include breakpoints(xs) {
+                overflow: auto;
+            }
+        }
+
+        table {
+            tr {
+                td,
+                th {
+                    white-space: normal;
+
+                    @media (min-width: 1350px) {
+                        white-space: wrap;
+                    }
+                }
+            }
+        }
+
+        &-list {
+            width: 100%;
+            border: none;
+            border: px(0.2) solid var(--neutral-400);
+
+            tbody {
+                display: block;
+            }
+
+            .item {
+                border: px(0.2) solid var(--neutral-400);
+                background: var(--neutral-50);
+                color: var(--gray-color);
+                font-size: px(14);
+                text-align: center;
+                font-family: var(--font-family);
+
+                & * {
+                    text-wrap: wrap;
+                }
+
+                &-text {
+                    max-width: 100%;
+                    padding: px(3.5) px(4);
+                    border-left: 1px solid var(--neutral-400);
+                    text-align: center;
+                    @include text-shorten();
+                    background-color: var(--light-50);
+                    color: var(--neutral-800);
+                    font-weight: 500;
+                }
+
+                &-info {
+                    padding: px(3.5) px(4);
+                    text-align: center;
+                    border: none;
+                    border: px(0.2) solid var(--neutral-400);
+                    background-color: var(--neutral-50);
+                    color: var(--main-color);
+                    max-width: 100%;
+                    min-width: px(100);
+
+                    &:empty {
+                        border: px(0.2) solid var(--neutral-400);
+                        height: px(30);
+                    }
+                }
+
+                &:last-child {
+                    border: px(0.2) solid var(--neutral-400);
+                }
+            }
+        }
+    }
+}

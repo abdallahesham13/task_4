@@ -1,0 +1,286 @@
+﻿.wrap-input {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    font-size: 0.875rem;
+
+    label,
+    .wrap-input__label {
+        color: var(--neutral-700);
+        text-align: start;
+        font-family: var(--font-family);
+        font-weight: 400;
+        line-height: 1.3125rem;
+        white-space: nowrap;
+        font-size: clamp(0.8rem, 0.9rem, 0.95rem);
+    } 
+}
+//inputs
+.inpt {
+    width: 100%;
+    border: px(1) solid var(--neutral-100);
+    @include border-radius(px(6));
+    padding: px(8) px(15); //all input same padding in system
+    height: var(--lg-height);
+    @include transition();
+    font-size: px(12);
+    color: var(--neutral-900);
+
+    @include mq(min, w, sm-tab) {
+        font-size: px(13);
+    }
+
+    &:-ms-input-placeholder,
+    &::-ms-input-placeholder,
+    &:-moz-input-placeholder,
+    &::placeholder {
+        color: var(--neutral-900);
+        font-size: px(12);
+        opacity: 1;
+
+        @include mq(min, w, sm-tab) {
+            font-size: px(13);
+        }
+    }
+
+    &:focus {
+        border-color: var(--main-color);
+        box-shadow: none;
+    }
+
+    input[type="date"] {
+        &::-webkit-calendar-picker-indicator {
+            color: var(--danger-500);
+            opacity: 1;
+            background-image: url("../../img/svg/calendar.svg");
+            filter: var(--color-img);
+            width: px(14);
+            height: px(14);
+            cursor: pointer;
+            @include border-radius(50%);
+            margin-left: 0.5rem;
+        }
+
+        &::-webkit-calendar-picker-indicator:hover {
+            -webkit-box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.04);
+            color: var(--danger-500);
+        }
+    }
+    //select
+    &.select {
+        font-size: px(12);
+        color: var(--neutral-200);
+        cursor: pointer;
+    }
+    //textarea
+    &.textarea {
+        overflow: auto;
+        resize: none;
+        max-height: px(104);
+        width: 100%;
+        min-height: 10rem;
+        padding: 1rem;
+        @include border-radius(px(6));
+        border: 0.5px solid var(--neutral-300);
+        font-size: 0.875rem;
+        transition: all 0.3s ease-in-out;
+
+        &:focus-within {
+            border-color: var(--main-color);
+        }
+
+        &_xl {
+            max-height: px(250);
+        }
+    }
+
+    &[type="text"]:disabled {
+        background-color: var(--neutral-100);
+        border: 1px solid var(--neutral-300);
+    }
+
+    &[type="text"] {
+        background-color: transparent;
+        border: 1px solid var(--neutral-400);
+        color: var(--black-color);
+
+        &:focus {
+            border-color: var(--main-color);
+            box-shadow: none;
+        }
+    }
+}
+
+.form-control:disabled {
+    background-color: var(--neutral-200) !important;
+    opacity: 0.8;
+    cursor: auto;
+
+    & + .cd_icon {
+        cursor: auto;
+    }
+}
+
+.checkbox-add {
+    @include flex-between-center;
+
+    .checkbox_group {
+        gap: px(20);
+
+        &-item {
+            @include flex-center-center;
+
+            .q-checkbox {
+                cursor: pointer;
+            }
+
+            .lbl-checkbox {
+                position: relative;
+                padding-left: px(25);
+                padding-right: px(15);
+                cursor: pointer;
+                display: flex;
+            }
+        }
+
+        input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: px(25);
+            width: px(25);
+            background-color: #eee;
+        }
+
+        .container input:checked ~ .checkmark {
+            background-color: var(--danger-500);
+        }
+
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        .container input:checked ~ .checkmark:after {
+            display: block;
+        }
+
+        .container .checkmark:after {
+            left: px(9);
+            top: px(5);
+            width: px(5);
+            height: px(10);
+            border: solid var(--neutral-50);
+            border-width: 0 3px 3px 0;
+
+            @include transform(rotate(45deg));
+        }
+    }
+}
+    // show icon calendar use the class
+.date_form {
+    color: var(--neutral-300);
+    position: relative;
+
+    .cd_icon {
+        content: "";
+        opacity: 1;
+        background: url(../img/svg/calendar.svg) no-repeat center;
+        filter: var(--color-img);
+        background-size: px(30);
+        width: 1.875rem;
+        cursor: pointer;
+        z-index: 5;
+        height: 2.25rem;
+        @include absolute("", "", 0, 0);
+        color: transparent;
+    }
+}
+    // For make check box with mark icon ex: promotion request page in tab (التعهد)
+.checker {
+    input[type="radio"],
+    input[type="checkbox"] {
+        padding: 0;
+        height: initial;
+        width: initial;
+        margin-bottom: 0;
+        display: none;
+        cursor: pointer;
+    }
+
+    input[disabled="disabled"] {
+        & + label {
+            color: var(--neutral-400);
+            cursor: not-allowed;
+
+            &::before {
+                cursor: not-allowed;
+            }
+        }
+
+        &:checked + label::before {
+            border-color: var(--neutral-400) !important;
+            background: var(--neutral-400) !important;
+        }
+    }
+
+    label {
+        position: relative;
+        user-select: none;
+        cursor: pointer;
+
+        @include mq(min, w, mob-min) {
+            font-size: 0.85rem;
+        }
+
+        @include mq(min, w, xs) {
+            font-size: 1rem;
+        }
+
+        &:before {
+            content: "";
+            width: px(10);
+            height: px(10);
+            position: relative;
+            padding: px(8);
+            margin-left: px(8);
+            border: 1px solid var(--neutral-600);
+            @include border-radius(0.25rem);
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            vertical-align: middle;
+            background-color: transparent;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+            -webkit-appearance: none;
+            cursor: pointer;
+        }
+
+        &.error {
+            &:before {
+                border: 1px solid #f04438;
+            }
+        }
+    }
+
+    input[type="radio"]:checked + label:before,
+    input[type="checkbox"]:checked + label:before {
+        content: "✓";
+        border-color: var(--main-color);
+        display: inline-flex;
+        background: var(--main-color);
+        color: var(--neutral-50);
+        font-size: 0.85rem;
+    }
+}

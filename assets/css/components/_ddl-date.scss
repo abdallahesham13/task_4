@@ -1,0 +1,115 @@
+﻿.ddl-date {
+    min-width: 13rem;
+    border: none;
+
+    &.wider {
+        min-width: 100%;
+    }
+
+    &__above-text {
+        color: var(--neutral-600);
+        font-size: 0.8rem;
+    }
+
+    &-item {
+        padding-top: 0.59rem;
+        padding-bottom: 0.59rem;
+        padding-right: 0.92rem;
+        padding-left: 0.92rem;
+
+        @include flex-start-center();
+        font-size: 0.8rem;
+
+        @include transition(all, 0.32s, ease-in-out);
+
+        &:first-child {
+            border-bottom: 1px solid var(--neutral-300);
+        }
+
+        &:not(:first-child):not(:last-child) {
+            .item-content * {
+                cursor: pointer;
+            }
+        }
+
+        &:first-child:hover,
+        &:last-child:hover {
+            cursor: auto;
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        &:hover {
+            &:not(:first-child):not(:last-child) {
+                .shown-text {
+                    color: var(--main-color);
+                }
+            }
+        }
+    }
+
+    .item-content {
+        @include flex-start-center();
+        gap: 0.46rem;
+
+        .shown-text {
+            color: #111928;
+            @include transition(all, 0.32s, ease-in-out);
+        }
+
+        .lbl-for-full-width {
+            font-size: 0.894rem;
+
+            @include mq(min, w, md) {
+                font-size: 0.80094rem;
+            }
+        }
+    }
+
+    .date-action {
+        @include flex-start-center(column);
+        gap: 1rem;
+
+        &__input {
+            width: 5.75rem !important;
+            height: 1.8rem;
+            @include border-radius(0.31225rem);
+            border: 0.625px solid var(--neutral-400);
+            background-color: var(--neutral-50);
+            padding: 0.70256rem 0.28563rem 0.70431rem 0.62438rem;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex-shrink: 0;
+            font-size: 0.8rem;
+            transition: all 0.33s ease-in-out;
+
+            &:focus-within {
+                border-color: var(--main-color);
+            }
+
+            &.full-width {
+                width: 100% !important;
+                height: 1.86rem;
+                font-size: 0.8rem;
+                cursor: text !important;
+            }
+        }
+
+        .bottom-content {
+            @include flex-between-center();
+            gap: 0.35rem;
+        }
+
+        .search-btn {
+            padding-right: 1.2rem;
+            padding-left: 1.2rem;
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            align-self: flex-end;
+            font-size: calc(0.8rem + 0.15rem) !important;
+        }
+    }
+}

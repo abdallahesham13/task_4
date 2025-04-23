@@ -1,0 +1,125 @@
+@charset "UTF-8";
+@use "sass:list";
+
+// Don't use this mixins, Use only (mq) mixin.
+
+@mixin breakpoints($point) {
+    @if $point == xs {
+        @media (max-width: 576px) {
+            @content;
+        }
+    }
+
+    @else if $point == xs-min {
+        @media (min-width: 577px) {
+            @content;
+        }
+    }
+    @else if $point == sm {
+        @media (max-width: 767px) {
+            @content;
+        }
+    }
+    @else if $point == sm-min {
+        @media (min-width: 768px) {
+            @content;
+        }
+    }
+    @else if $point == 1080-min {
+        @media (min-width: 1080px) {
+            @content;
+        }
+    }
+    @else if $point == md {
+        @media (max-width: 991px) {
+            @content;
+        }
+    }
+    @else if $point == md-min {
+        @media (min-width: 992px) {
+            @content;
+        }
+    }
+    @else if $point == large {
+        @media (max-width: 1200px) {
+            @content;
+        }
+    }
+    @else if $point == large-min {
+        @media (min-width: 1201px) {
+            @content;
+        }
+    }
+    @else if $point == xlarge {
+        @media (max-width: 1400px) {
+            @content;
+        }
+    }
+    @else if $point == xlg-min {
+        @media (min-width: 1401px) {
+            @content;
+        }
+    }
+    @else if $point == xxlarge {
+        @media (max-width: 3000px) {
+            @content;
+        }
+    }
+    @else if $point == xxl-min {
+        @media (min-width: 3001px) {
+            @content;
+        }
+    }
+}
+
+@mixin mq($type: min, $dimension: w, $breakpoint-name: md) {
+    $all-types: (min, max);
+
+    $all-dimensions: (width, w, height, h);
+
+    $breakpoints: (
+        "mob-min": 320px,
+        "mob": 400px,
+        "mob-wide": 480px,
+        "xs": 576px,
+        "sm-tab": 640px,
+        "sm": 767px,
+        "sm-wide": 870px,
+        "md": 991px,
+        "md-wide": 1100px,
+        "lg": 1200px,
+        "xl": 1400px,
+        "xl-max": 1600px,
+        "xxl": 1920px,
+        );
+
+    @if not list.index($all-types, $type) {
+        @error "#{$type} dose not exist in list: (#{$all-types})";
+    }
+
+    @if not list.index($all-dimensions, $dimension) {
+        @error "#{$dimension} dose not exist in list: (#{$all-dimensions})";
+    }
+
+    @if map-has-key($breakpoints, $breakpoint-name) {
+        $actual-dimension: map_get($breakpoints, $breakpoint-name);
+
+        @if $type == max {
+            $actual-dimension: $actual-dimension - 1px;
+        }
+
+        @if $dimension == width or $dimension == w {
+            @media only screen and (#{$type}-width: $actual-dimension) {
+                @content;
+            }
+        }
+        @else if $dimension == height or $dimension == h {
+            @media only screen and (#{$type}-height: $actual-dimension) {
+                @content;
+            }
+        }
+    }
+    @else {
+        @error "Please, Enter the valid breakpoint. #{$breakpoint-name} dose not exist in (#{$breakpoints})";
+    }
+}

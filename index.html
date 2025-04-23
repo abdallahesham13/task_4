@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="...." />
+    <meta name="author" content="Abdallah Hesham" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>elite</title>
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <link rel="stylesheet" href="assets/css/lib/fontawesome.min.css" />
+    <link rel="stylesheet" href="assets/css/lib/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="up-navbar">
+        <ul class="upper_nav">
+          <li class="upper_nav_item current-date">
+            <i class="far fa-calendar"></i>
+            <span class="date">2025/04/23 - 25/10/1446</span>
+          </li>
+
+          <li class="upper_nav_item current-time">
+            <i class="far fa-clock"></i>
+            <time class="time" id="lblTime">11:34 صباحًا</time>
+          </li>
+        </ul>
+      </div>
+      <nav class="navbar navbar-expand-lg" id="navbar">
+        <div class="navbar-brand">
+          <div class="hamburger-menu" id="hamburger-menu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+
+          <a class="navbar-brand-logo" href="#">
+            <img class="logo" src="assets/images/logo/logo.svg" alt="Logo" />
+          </a>
+        </div>
+
+        <div class="navbar-end">
+          <div class="navbar-end__item dropdown" id="navbarDropdown">
+            <div
+              class="d-flex align-items-center gap-1 dropdown-toggle"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              id="userDropdown"
+            >
+              <div class="user-image me-2">
+                <img
+                  class="img"
+                  src="assets/images/logo/user.svg"
+                  alt="Man Profile Logo"
+                />
+              </div>
+              <span class="user-name me-2">مهند طارق محمد</span>
+              <div class="arrow-icon"></div>
+            </div>
+
+            <ul
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="userDropdown"
+            >
+              <li><a class="dropdown-item" href="#">الملف الشخصي</a></li>
+              <li><a class="dropdown-item" href="#">الإعدادات</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" href="#">تسجيل الخروج</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="main_layout">
+        <aside id="sidebar" class="sidebar sidebar-closed">
+          <button id="toggleBtn" class="btn mb-2">
+            <img
+              src="assets/images/sidemenu/list.svg"
+              class="side-btn"
+              alt=""
+            />
+          </button>
+
+          <button
+            class="sidemenu-btn btn mb-2"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainMenu"
+          >
+            <img
+              src="assets/images/sidemenu/home.svg"
+              class="side-btn"
+              alt=""
+            />
+          </button>
+          <ul id="mainMenu" class="collapse list-unstyled ps-3">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Profile</a></li>
+          </ul>
+
+          <button
+            class="sidemenu-btn btn mb-2"
+            data-bs-toggle="collapse"
+            data-bs-target="#communicationMenu"
+          >
+            <img
+              src="assets/images/sidemenu/list.svg"
+              class="side-btn"
+              alt=""
+            />
+          </button>
+          <ul id="communicationMenu" class="collapse list-unstyled ps-3">
+            <li><a href="#">Messages</a></li>
+          </ul>
+
+          <button
+            class="sidemenu-btn btn mb-2"
+            data-bs-toggle="collapse"
+            data-bs-target="#settingsMenu"
+          >
+            <img
+              src="assets/images/sidemenu/email.svg"
+              class="side-btn"
+              alt=""
+            />
+          </button>
+          <ul id="settingsMenu" class="collapse list-unstyled ps-3">
+            <li><a href="#">Settings</a></li>
+          </ul>
+        </aside>
+
+        <div class="main_content">
+          <ol class="breadcrumb" aria-label="breadcrumb">
+            <li
+              class="breadcrumb-item d-flex justify-content-center align-items-center"
+            >
+              <a href="#" class="home-bc-link ms-1">
+                <img
+                  src="assets/images/icons/fa_home.svg"
+                  data-bc=""
+                />
+              </a>
+            </li>
+            <li
+              class="breadcrumb-item d-flex justify-content-center align-items-center"
+            >
+              <a href="#" class="breadcrumb-link ms-1">البريد</a>
+            </li>
+
+            <li
+              class="breadcrumb-item d-flex justify-content-center align-items-center active"
+              aria-current="page"
+            >
+              الصادر
+            </li>
+          </ol>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container"></div>
+    </footer>
+
+    <script src="assets/js/lib/fontawesome.min.js"></script>
+    <script src="assets/js/lib/popper.min.js"></script>
+    <script src="assets/js/lib/bootstrap.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

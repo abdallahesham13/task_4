@@ -1,0 +1,47 @@
+﻿.calendar-item {
+    padding: 4px;
+    border: 0.6px solid #d1d5db;
+    border-radius: 4px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: var(--neutral-50, #ffffff) !important;
+    transition: border-color 0.3s ease-in-out;
+
+    &:focus-within {
+        outline: none;
+        border-color: var(--main-color, #41833a);
+        box-shadow: none;
+    }
+
+    &-input {
+        padding-inline-start: px(5);
+        padding-block: px(5);
+        border: none;
+        background: transparent;
+        font-size: 0.8rem;
+        cursor: default;
+
+        &::placeholder {
+            color: var(--neutral-900, #212830);
+            opacity: 1;
+            font-size: clamp(0.5875rem, calc(0.6rem + 0.1vw),0.88rem);
+        }
+
+        &::-ms-input-placeholder {
+            color: var(--neutral-900, #212830);
+            opacity: 1;
+            font-size: clamp(0.5875rem, calc(0.6rem + 0.1vw),0.88rem);
+        }
+    }
+
+    img {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .midday-time {
+        font-size: 0.8rem;
+    }
+}

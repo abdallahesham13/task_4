@@ -1,0 +1,90 @@
+@charset "UTF-8";
+@use "sass:list";
+@use "sass:math";
+
+@mixin display-flex(
+  $justify: "",
+  $align: "",
+  $wrap: "",
+  $direction: "",
+  $self: ""
+) {
+  display: flex;
+  justify-content: #{$justify};
+  align-items: #{$align};
+  flex-wrap: #{$wrap};
+  flex-direction: #{$direction};
+  align-self: #{$self};
+}
+
+@mixin flex-center-center($dir: row) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  @include prefixing-ms(flex-direction, $dir);
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-start-start($dir: row) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  @include prefixing-ms(flex-direction, $dir);
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+@mixin flex-start-center($dir: row) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  @include prefixing-ms(flex-direction, $dir);
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@mixin flex-between-center($dir: row) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  @include prefixing-ms(flex-direction, $dir);
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-center-start($dir: row) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  @include prefixing-ms(flex-direction, $dir);
+
+  justify-content: center;
+  align-items: flex-start;
+}
+
+@mixin flex-between-start($dir: row) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  @include prefixing-ms(flex-direction, $dir);
+
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+@mixin justify-content($value) {
+  -webkit-box-pack: $value;
+  -ms-flex-pack: $value;
+  justify-content: $value;
+}
+
+@mixin flex-wrap($val: nowrap) {
+  $all-values: (nowrap, wrap, wrap-reverse);
+
+  @if not list.index($all-values, $val) {
+    @error "$val must has one of these units: (#{$all-values})";
+  }
+
+  @include prefixing-ms(flex-wrap, $val);
+}

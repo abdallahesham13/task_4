@@ -1,0 +1,17 @@
+﻿@charset "UTF-8";
+
+@mixin prefixing-ms($property, $value) {
+    -ms-#{$property}: $value;
+    #{$property}: $value;
+}
+
+@mixin prefixing-web($property, $value) {
+    -webkit-#{$property}: $value;
+    #{$property}: $value;
+} 
+
+@mixin prefix-val-web-o($prop, $value) {
+    #{$prop}: -webkit-#{$value};
+    #{$prop}: -o-#{$value};
+    #{$prop}: #{$value};
+}

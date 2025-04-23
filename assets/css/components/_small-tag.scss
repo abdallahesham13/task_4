@@ -1,0 +1,55 @@
+﻿.small-tag {
+    height: 2rem;
+    position: relative;
+    border: 0.8px solid var(--light-300);
+    @include border-radius(0.25rem);
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+
+    @include flex-center-center();
+    gap: 0.5rem;
+    background-color: var(--light-100);
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+        .custom-tooltip {
+            --cs-tooltip-top: -150%;
+            top: var(--cs-tooltip-top);
+            visibility: visible;
+            opacity: 1;
+
+            @include mq(max, width, mob-wide) {
+                --cs-tooltip-top: -130%;
+            }
+
+            &:before {
+                visibility: visible;
+                opacity: 1;
+            }
+
+            @include breakpoints(md) {
+                --cs-tooltip-top: 0;
+                left: 100%;
+                @include transform( translateX(0));
+
+                &:before {
+                    visibility: hidden;
+                }
+            }
+        }
+    }
+
+    &__text {
+        @include mq(max, width, mob-wide) {
+            font-size: 0.85rem;
+        }
+    }
+
+    span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+    }
+}

@@ -1,0 +1,98 @@
+﻿.investigation_code_body {
+    margin-block-start: 1.5rem;
+    margin-block-end: 3rem;
+
+    .number_inbox {
+        width: 7.25rem;
+        height: 7.25rem;
+        padding: 2.36rem 1.38rem;
+
+        &_title {
+            font-size: px(55);
+            font-weight: 400;
+            color: var(--neutral-900);
+        }
+    }
+
+    .remaining_text {
+        p {
+            font-size: px(16);
+            font-weight: 400;
+            line-height: px(28.828);
+        }
+
+        &__desc {
+            color: var(--neutral-700);
+            margin-inline-end: px(8);
+        }
+
+        &__time {
+            &.active {
+                color: var(--main-color);
+            }
+
+            &.disabled {
+                color: var(--neutral-500);
+            }
+        }
+    }
+
+    .instructional_text {
+        color: var(--neutral-700);
+        font-weight: 700;
+        line-height: 1.802rem;
+
+        @include mq(max, w, mob) {
+            font-size: 0.875rem;
+        }
+    }
+}
+
+/*antimation_loader*/
+
+.antimation_loader_body {
+    &_desc {
+        color: var(--neutral-700);
+        text-align: right;
+        font-size: px(16);
+        font-weight: 700;
+        line-height: px(28.828);
+    }
+
+    .antimation_loader-wrapper {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: px(24);
+        @include border-radius(10px);
+        overflow: hidden;
+        opacity: 0.99;
+        direction: ltr;
+    }
+
+    .antimation_loader {
+        position: absolute;
+        bottom: 0;
+        width: px(90.531);
+        height: px(7);
+        background: var(--gradient);
+        animation: certification-loading 3s ease-in-out infinite;
+        @include border-radius(8px);
+        transform-origin: 50% 50%;
+    }
+
+    @keyframes certification-loading {
+        0% {
+            @include transform(translateX(0));
+        }
+
+        50% {
+            @include transform(translateX(410px));
+        }
+
+        100% {
+            @include transform(translateX(0));
+        }
+    }
+}

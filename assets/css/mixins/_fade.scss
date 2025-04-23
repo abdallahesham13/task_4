@@ -1,0 +1,22 @@
+﻿@charset "UTF-8";
+@use "sass:list";
+
+@mixin fade($type) {
+    $list-all-types: (hide, show);
+
+    @if not list.index($list-all-types, $type) {
+        @error "#{$type} dose not exist in list: (#{$list-all-types}).";
+    }
+
+    @if $type == "hide" {
+        visibility: hidden;
+        opacity: 0;
+        display: none;
+        @include transition();
+    }
+    @else if $type == "show" {
+        visibility: visible !important;
+        opacity: 1;
+        display: block !important;
+    }
+}

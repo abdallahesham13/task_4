@@ -1,0 +1,85 @@
+﻿.box-search {
+    display: flex;
+    gap: 1rem;
+
+    @include mq(min, w, mob-min) {
+       gap:0rem
+    }
+
+    &:focus-within {
+        .box-search__right {
+            border-color: var(--main-color);
+        }
+    }
+
+    &__right {
+        position: relative;
+        padding-inline: 0.8rem;
+        @include border-radius(0.3305rem);
+        border: 0.661px solid var(--neutral-400);
+        @include flex-start-center();
+        gap: 0.5rem;
+        background-color: var(--neutral-50);
+        transition: all 0.33s ease-in-out;
+        padding-block: 0.425rem;
+
+        .mark-icon {
+            img {
+                width: px(18);
+            }
+        }
+
+        &-input {
+            @include mq(min, w, mob-min) {
+                width: 100%;
+            }
+
+            @include mq(min, w, md) {
+                width: 26rem;
+
+                &.moreWidth {
+                    width: 33rem;
+                }
+            }
+
+            input {
+                width: 100%;
+                border: none;
+                caret-color: var(--main-color);
+                font-size: 0.75rem;
+
+                @include mq(min, w, sm) {
+                    font-size: 0.9rem;
+                }
+
+                ::placeholder {
+                    font-size: 0.9rem;
+                    color: var(--neutral-500);
+                }
+
+                ::-ms-input-placeholder {
+                    font-size: 0.9rem;
+                    color: var(--neutral-500);
+                }
+            }
+        }
+
+        .icon-x {
+            position: absolute;
+            $icon-x-position: 2.5%;
+            $icon-y-position: 50%;
+
+            inset-inline-end: $icon-x-position;
+            left: $icon-x-position;
+            inset-block-start: $icon-y-position;
+            top: $icon-y-position;
+            @include transform(translateY(-50%));
+            cursor: pointer;
+        }
+    }
+
+    .span_error {
+        font-size: px(13);
+        color: var(--danger-500);
+    }
+}

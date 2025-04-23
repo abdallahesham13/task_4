@@ -1,0 +1,41 @@
+﻿.breadcrumb,
+.breadcrumbs {
+    margin-bottom: px(15);
+
+    .breadcrumb-item {
+        font-size: clamp(0.8rem, calc(0.3vw + 0.6rem), 1.25rem);
+        color: var(--neutral-700);
+
+        & + .breadcrumb-item {
+            color: var(--neutral-700);
+        }
+
+        a {
+            color: var(--neutral-700) !important;
+        }
+
+        & + .breadcrumb-item::before {
+            content: var(--bs-breadcrumb-divider,"/");
+            padding-inline: 0.4rem;
+            float: inline-start;
+            color: var(--neutral-700);
+        }
+
+        &.active {
+            color: var(--neutral-900);
+
+            a {
+                color: var(--neutral-900);
+            }
+        }
+    }
+}
+breadcrumb-item + .breadcrumb-item::before {
+    float: inline-start;
+    padding-left: var(--bs-breadcrumb-item-padding-x);
+}
+
+.breadcrumb-item + .breadcrumb-item {
+    padding-right: 0;
+    padding-left: 0;
+}

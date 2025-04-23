@@ -1,0 +1,143 @@
+﻿.toggle-fillter {
+    display: inline-flex;
+    padding: 0;
+    cursor: pointer;
+
+    &.reverse {
+        .switch input + .slider {
+            &:before {
+                @include transform(translateX(23px));
+            }
+        }
+
+        input:checked {
+            & + .slider {
+                background-color: var(--main-color);
+
+                &:before {
+                    @include transform(translateX(2px));
+                }
+            }
+        }
+
+        .slider {
+            background-color: var(--neutral-400);
+        }
+    }
+
+    span {
+        color: var(--main-color);
+    }
+
+    .txt {
+        color: var(--neutral-700);
+        font-size: px(11);
+        padding: px(3) px(5) 0;
+        cursor: default !important;
+    }
+
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: px(45);
+        height: px(22);
+        margin-inline-end: px(10);
+
+        input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+    }
+
+    .slider {
+        &.round {
+            @include border-radius(px(34));
+            cursor: pointer !important;
+
+            &:before {
+                @include border-radius(50%);
+            }
+        }
+
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--main-color);
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+
+        &:before {
+            position: absolute;
+            content: "";
+            height: px(18);
+            width: px(18);
+            left: px(2);
+            bottom: px(2);
+            background-color: var(--white);
+            transition: 0.4s;
+        }
+    }
+
+    input:checked + .slider {
+        background-color: var(--neutral-400);
+    }
+
+    input:focus + .slider {
+        box-shadow: 0 0 1px var(--main-color);
+    }
+
+    input:checked + .slider:before {
+        @include transform(translateX(26px));
+        left: 0;
+    }
+
+    &.disabled {
+        color: var(--neutral-500);
+        pointer-events: none;
+
+        .switch .slider,
+        input:checked + .slider,
+        input:not(:checked) + .slider {
+            background-color: var(--neutral-400);
+        }
+    }
+
+    .disabled {
+        pointer-events: none;
+
+        .slider {
+            background-color: var(--neutral-400);
+
+            &::before {
+                background-color: var(--white);
+            }
+        }
+    }
+
+    &_rtl {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        span {
+            font-size: px(13);
+            color: var(--neutral-500);
+        }
+
+        .switch {
+            margin-inline-end: 0;
+        }
+
+        .toggle-fillter input:checked + .slider {
+            background-color: var(--main-color);
+        }
+
+        .toggle-fillter .slider {
+            background-color: var(--neutral-400);
+        }
+    }
+}

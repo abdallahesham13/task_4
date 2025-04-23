@@ -1,0 +1,30 @@
+﻿.dashed-tag {
+    padding-top: px(8);
+    padding-bottom: px(8);
+    padding-right: px(20);
+    padding-left: px(20);
+    border: px(1) dashed var(--main-color);
+    @include border-radius(px(6));
+    @include flex-center-center();
+    background-color: var(--light-300);
+
+    @include mq(max, w, sm) {
+        padding-top: px(4);
+        padding-bottom: px(4);
+        padding-right: px(10);
+        padding-left: px(10);
+    }
+
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    &__text {
+        color: var(--main-color);
+        font-size: clamp(px(14), px(15), px(16));
+        font-style: normal;
+        font-weight:700;
+    }
+}

@@ -1,0 +1,33 @@
+﻿div[data-bs-toggle="collapse"] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    @include transition();
+
+    svg,
+    [data-img="svg"] {
+        @include transition();
+    }
+
+    &.collapsed {
+        svg,
+        [data-img="svg"] {
+            @include transform(rotate(-180deg));
+        }
+    }
+
+    .title {
+        color: var(--neutral-900);
+        text-align: right;
+        font-size: 1rem;
+        font-style: normal;
+        font-family: var(--font-family-Bold);
+        line-height: 1.64569rem;
+        user-select: none;
+
+        @include mq(min, w, sm-tab) {
+            font-size: 1.125rem;
+        }
+    }
+}

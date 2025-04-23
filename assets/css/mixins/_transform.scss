@@ -1,0 +1,5 @@
+@charset "UTF-8";
+
+@mixin transform($properties) {
+	@include vendor-prefix(transform, $properties);
+}
