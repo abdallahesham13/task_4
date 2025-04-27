@@ -9,13 +9,17 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <title>elite</title>
-    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="assets/images/logo/favicon.ico"
+      type="image/x-icon"
+    />
     <link rel="stylesheet" href="assets/css/lib/fontawesome.min.css" />
     <link rel="stylesheet" href="assets/css/lib/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <main>
+    <main class="main-page">
       <div class="up-navbar">
         <ul class="upper_nav">
           <li class="upper_nav_item current-date">
@@ -133,15 +137,12 @@
         </aside>
 
         <div class="main_content">
-          <ol class="breadcrumb" aria-label="breadcrumb">
+          <ol class="breadcrumb m-0 py-2" aria-label="breadcrumb">
             <li
               class="breadcrumb-item d-flex justify-content-center align-items-center"
             >
               <a href="#" class="home-bc-link ms-1">
-                <img
-                  src="assets/images/icons/fa_home.svg"
-                  data-bc=""
-                />
+                <img src="assets/images/icons/fa_home.svg" data-bc="" />
               </a>
             </li>
             <li
@@ -157,6 +158,488 @@
               الصادر
             </li>
           </ol>
+          <div
+            class="tabs-contain w-100 pt-3 pb-3 px-2 mx-auto row d-flex justify-content-center align-items-start mb-0 rounded"
+          >
+            <div class="col-md-12 col-lg-4 order-2 order-lg-1">
+              <ul
+                class="nav nav-pills justify-content-center row g-2"
+                id="pills-tab"
+                role="tablist"
+              >
+                <li class="nav-item col-sm-4" role="presentation">
+                  <button
+                    class="nav-link active"
+                    id="today-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#today"
+                    type="button"
+                    role="tab"
+                    aria-controls="today"
+                    aria-selected="true"
+                  >
+                    <span class="tab-text">اليوم</span>
+                  </button>
+                </li>
+                <li class="nav-item col-sm-4" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="week-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#week"
+                    type="button"
+                    role="tab"
+                    aria-controls="week"
+                    aria-selected="false"
+                  >
+                    <span class="tab-text">أسبوع</span>
+                  </button>
+                </li>
+                <li class="nav-item col-sm-4" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="all-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#all"
+                    type="button"
+                    role="tab"
+                    aria-controls="all"
+                    aria-selected="false"
+                  >
+                    <span class="tab-text">الجميع</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-12 col-lg-8 order-1 order-lg-2">
+              <div class="search-box d-flex gap-1">
+                <div class="w-100 box-search_start">
+                  <div class="search-icon">
+                    <img
+                      src="assets/images/icons/search.svg"
+                      class="search-icon-img"
+                      loading="lazy"
+                      alt=""
+                    />
+                  </div>
+                  <div class="search-input w-100">
+                    <input
+                      type="text"
+                      id="search_text"
+                      class="box-search__input-text"
+                      name="search"
+                      maxlength="180"
+                      placeholder="ابحث برقم الوارد او رقم الارشيف او موضوع المعاملة او رقم الخطاب"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="box-search_end d-flex align-items-center justify-content-center"
+                >
+                  <button
+                    class="search-btn d-flex justify-content-center align-items-center"
+                  >
+                    بحث
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-content w-100" id="pills-tabContent">
+            <div
+              class="tab-pane fade show active w-100"
+              id="today"
+              role="tabpanel"
+              aria-labelledby="today-tab"
+            >
+              <div class="row inbox-details-container outbox w-100">
+                <div class="col-md-12 col-lg-4 close-card rounded">
+                  <div class="transactions rounded w-100">
+                    <div
+                      class="transaction-head d-flex justify-content-between align-items-center"
+                    >
+                      <h2 class="transaction-title">المعاملات</h2>
+                      <div class="transaction-icon">
+                        <i class="fas fa-redo"></i>
+                        <span class="see-all"> عرض الجميع </span>
+                      </div>
+                    </div>
+
+                    <div class="transactions_wrapper collapse">
+                      <div class="transaction-card active">
+                        <div
+                          class="wrapper-head d-flex justify-content-between align-items-center"
+                        >
+                          <div
+                            class="wrapper-title d-flex justify-content-center align-items-center"
+                          >
+                            <span class="title-text">جاري تسليم الوصول</span>
+                          </div>
+                          <div
+                            class="title-img d-flex justify-content-center align-items-center gap-1"
+                          >
+                            <span class="number">5</span>
+                            <img
+                              src="assets/images/icons/paperclip.svg"
+                              class="attachement-icon"
+                              loading="lazy"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                        <div
+                          class="wrapper-content d-flex justify-content-start align-items-start"
+                        >
+                          <p class="wrapper-desc">
+                            خطاب تعميد لطلب انتداب برقم (271888 )
+                          </p>
+                          <span class="date">
+                            29/10/1446 , 27/04/2025 01:41 م</span
+                          >
+                        </div>
+                      </div>
+                      <div class="transaction-card">
+                        <div
+                          class="wrapper-head d-flex justify-content-between align-items-center"
+                        >
+                          <div
+                            class="wrapper-title d-flex justify-content-center align-items-center"
+                          >
+                            <span class="title-text">جاري تسليم الوصول</span>
+                          </div>
+                          <div
+                            class="title-img d-flex justify-content-center align-items-center gap-1"
+                          >
+                            <span class="number">5</span>
+                            <img
+                              src="assets/images/icons/paperclip.svg"
+                              class="attachement-icon"
+                              loading="lazy"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                        <div
+                          class="wrapper-content d-flex justify-content-start align-items-start"
+                        >
+                          <p class="wrapper-desc">
+                            خطاب تعميد لطلب انتداب برقم (271888 )
+                          </p>
+                          <span class="date">
+                            29/10/1446 , 27/04/2025 01:41 م</span
+                          >
+                        </div>
+                      </div>
+                      <div class="transaction-card">
+                        <div
+                          class="wrapper-head d-flex justify-content-between align-items-center"
+                        >
+                          <div
+                            class="wrapper-title d-flex justify-content-center align-items-center"
+                          >
+                            <span class="title-text">جاري تسليم الوصول</span>
+                          </div>
+                          <div
+                            class="title-img d-flex justify-content-center align-items-center gap-1"
+                          >
+                            <span class="number">5</span>
+                            <img
+                              src="assets/images/icons/paperclip.svg"
+                              class="attachement-icon"
+                              loading="lazy"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                        <div
+                          class="wrapper-content d-flex justify-content-start align-items-start"
+                        >
+                          <p class="wrapper-desc">
+                            خطاب تعميد لطلب انتداب برقم (271888 )
+                          </p>
+                          <span class="date">
+                            29/10/1446 , 27/04/2025 01:41 م</span
+                          >
+                        </div>
+                      </div>
+                      <div class="transaction-card">
+                        <div
+                          class="wrapper-head d-flex justify-content-between align-items-center"
+                        >
+                          <div
+                            class="wrapper-title d-flex justify-content-center align-items-center"
+                          >
+                            <span class="title-text">جاري تسليم الوصول</span>
+                          </div>
+                          <div
+                            class="title-img d-flex justify-content-center align-items-center gap-1"
+                          >
+                            <span class="number">5</span>
+                            <img
+                              src="assets/images/icons/paperclip.svg"
+                              class="attachement-icon"
+                              loading="lazy"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                        <div
+                          class="wrapper-content d-flex justify-content-start align-items-start"
+                        >
+                          <p class="wrapper-desc">
+                            خطاب تعميد لطلب انتداب برقم (271888 )
+                          </p>
+                          <span class="date">
+                            29/10/1446 , 27/04/2025 01:41 م</span
+                          >
+                        </div>
+                      </div>
+                      <div class="transaction-card">
+                        <div
+                          class="wrapper-head d-flex justify-content-between align-items-center"
+                        >
+                          <div
+                            class="wrapper-title d-flex justify-content-center align-items-center"
+                          >
+                            <span class="title-text">جاري تسليم الوصول</span>
+                          </div>
+                          <div
+                            class="title-img d-flex justify-content-center align-items-center gap-1"
+                          >
+                            <span class="number">5</span>
+                            <img
+                              src="assets/images/icons/paperclip.svg"
+                              class="attachement-icon"
+                              loading="lazy"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                        <div
+                          class="wrapper-content d-flex justify-content-start align-items-start"
+                        >
+                          <p class="wrapper-desc">
+                            خطاب تعميد لطلب انتداب برقم (271888 )
+                          </p>
+                          <span class="date">
+                            29/10/1446 , 27/04/2025 01:41 م</span
+                          >
+                        </div>
+                      </div>
+                      <div class="transaction-card">
+                        <div
+                          class="wrapper-head d-flex justify-content-between align-items-center"
+                        >
+                          <div
+                            class="wrapper-title d-flex justify-content-center align-items-center"
+                          >
+                            <span class="title-text">جاري تسليم الوصول</span>
+                          </div>
+                          <div
+                            class="title-img d-flex justify-content-center align-items-center gap-1"
+                          >
+                            <span class="number">5</span>
+                            <img
+                              src="assets/images/icons/paperclip.svg"
+                              class="attachement-icon"
+                              loading="lazy"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                        <div
+                          class="wrapper-content d-flex justify-content-start align-items-start"
+                        >
+                          <p class="wrapper-desc">
+                            خطاب تعميد لطلب انتداب برقم (271888 )
+                          </p>
+                          <span class="date">
+                            29/10/1446 , 27/04/2025 01:41 م</span
+                          >
+                        </div>
+                      </div>
+                      <div class="transaction-card">
+                        <div
+                          class="wrapper-head d-flex justify-content-between align-items-center"
+                        >
+                          <div
+                            class="wrapper-title d-flex justify-content-center align-items-center"
+                          >
+                            <span class="title-text">جاري تسليم الوصول</span>
+                          </div>
+                          <div
+                            class="title-img d-flex justify-content-center align-items-center gap-1"
+                          >
+                            <span class="number">5</span>
+                            <img
+                              src="assets/images/icons/paperclip.svg"
+                              class="attachement-icon"
+                              loading="lazy"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                        <div
+                          class="wrapper-content d-flex justify-content-start align-items-start"
+                        >
+                          <p class="wrapper-desc">
+                            خطاب تعميد لطلب انتداب برقم (271888 )
+                          </p>
+                          <span class="date">
+                            29/10/1446 , 27/04/2025 01:41 م</span
+                          >
+                        </div>
+                      </div>
+                      <div class="transaction-card">
+                        <div
+                          class="wrapper-head d-flex justify-content-between align-items-center"
+                        >
+                          <div
+                            class="wrapper-title d-flex justify-content-center align-items-center"
+                          >
+                            <span class="title-text">جاري تسليم الوصول</span>
+                          </div>
+                          <div
+                            class="title-img d-flex justify-content-center align-items-center gap-1"
+                          >
+                            <span class="number">5</span>
+                            <img
+                              src="assets/images/icons/paperclip.svg"
+                              class="attachement-icon"
+                              loading="lazy"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                        <div
+                          class="wrapper-content d-flex justify-content-start align-items-start"
+                        >
+                          <p class="wrapper-desc">
+                            خطاب تعميد لطلب انتداب برقم (271888 )
+                          </p>
+                          <span class="date">
+                            29/10/1446 , 27/04/2025 01:41 م</span
+                          >
+                        </div>
+                      </div>
+                      <div class="transaction-card">
+                        <div
+                          class="wrapper-head d-flex justify-content-between align-items-center"
+                        >
+                          <div
+                            class="wrapper-title d-flex justify-content-center align-items-center"
+                          >
+                            <span class="title-text">جاري تسليم الوصول</span>
+                          </div>
+                          <div
+                            class="title-img d-flex justify-content-center align-items-center gap-1"
+                          >
+                            <span class="number">5</span>
+                            <img
+                              src="assets/images/icons/paperclip.svg"
+                              class="attachement-icon"
+                              loading="lazy"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                        <div
+                          class="wrapper-content d-flex justify-content-start align-items-start"
+                        >
+                          <p class="wrapper-desc">
+                            خطاب تعميد لطلب انتداب برقم (271888 )
+                          </p>
+                          <span class="date">
+                            29/10/1446 , 27/04/2025 01:41 م</span
+                          >
+                        </div>
+                      </div>
+                      <div class="transaction-card">
+                        <div
+                          class="wrapper-head d-flex justify-content-between align-items-center"
+                        >
+                          <div
+                            class="wrapper-title d-flex justify-content-center align-items-center"
+                          >
+                            <span class="title-text">جاري تسليم الوصول</span>
+                          </div>
+                          <div
+                            class="title-img d-flex justify-content-center align-items-center gap-1"
+                          >
+                            <span class="number">5</span>
+                            <img
+                              src="assets/images/icons/paperclip.svg"
+                              class="attachement-icon"
+                              loading="lazy"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                        <div
+                          class="wrapper-content d-flex justify-content-start align-items-start"
+                        >
+                          <p class="wrapper-desc">
+                            خطاب تعميد لطلب انتداب برقم (271888 )
+                          </p>
+                          <span class="date">
+                            29/10/1446 , 27/04/2025 01:41 م</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="col-md-12 col-lg-8 rounded fullscreen qBox py-2 px-3 custom-scroll"
+                >
+                  <div class="inbox-content">
+                    <div
+                      class="inbox-details d-flex justify-content-start align-items-center gap-2 mb-4"
+                    >
+                      <span class="inbox-details-subject"
+                        >موضوع المعاملة :</span
+                      >
+                      <img
+                        src="assets/images/icons/info.svg"
+                        class="inbox-details-img"
+                        loading="lazy"
+                        alt=""
+                      />
+                      <span class="inbox-details-title">
+                        خطاب تعميد لطلب انتداب برقم (٢٧١٨٨٨ )
+                      </span>
+                    </div>
+                    <div
+                      class="inbox-details d-flex justify-content-start align-items-center gap-2"
+                    >
+                      <span class="inbox-details-subject">المرسل اليه</span>
+                      <span class="inbox-details-title">أرشيف شئون الموظفين</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="tab-pane fade"
+              id="week"
+              role="tabpanel"
+              aria-labelledby="week-tab"
+            >
+              محتوى الأسبوع
+            </div>
+
+            <div
+              class="tab-pane fade"
+              id="all"
+              role="tabpanel"
+              aria-labelledby="all-tab"
+            >
+              محتوى الجميع
+            </div>
+          </div>
         </div>
       </div>
     </main>

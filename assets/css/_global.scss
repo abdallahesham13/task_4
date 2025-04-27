@@ -1,0 +1,46 @@
+html[dir="rtl"] {
+  @font-face {
+    font-family: "Almarai";
+    src: url("../fonts/Almarai/Almarai-Bold.ttf");
+    font-weight: 700;
+  }
+
+  @font-face {
+    font-family: "Almarai";
+    src: url("../fonts/Almarai/Almarai-Regular.ttf");
+    font-weight: 500;
+  }
+
+  @font-face {
+    font-family: "Almarai";
+    src: url("../fonts/Almarai/Almarai-ExtraBold.ttf");
+    font-weight: 900;
+  }
+
+  * {
+    font-family: "Almarai", sans-serif;
+  }
+}
+
+body {
+  margin: 0;
+  background-color: var(--gray-color);
+}
+.main-page {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+
+  @media (min-width: 991px) {
+    max-height: 100dvh;
+  }
+}
+.transactions_wrapper::-webkit-scrollbar {
+  width: 0.35rem;
+  height: 0.35rem;
+  background-color: var(--light-color, hsl(0deg, 0%, 100%));
+}
+.transactions_wrapper::-webkit-scrollbar-thumb {
+  border-radius: 0.7125rem;
+  background-color: var(--neutral-400, hsl(216deg, 12%, 84%));
+}

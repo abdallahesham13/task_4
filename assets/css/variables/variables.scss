@@ -4,9 +4,13 @@
   --dark-color: #1d1d35;
   --light-color: #fff;
   --gray-color: #edf1f5;
+  --neutral-700: #6e7887;
+  --neutral-500 :#98A1AE;
+  --neutral-400: #d1d5db;
+  --main-gradient: linear-gradient(to right, #8cc285 0%, #466143 100%);
 
-  --primary-filter: invert(56%) sepia(87%) saturate(397%) hue-rotate(138deg)
-    brightness(85%) contrast(85%);
+  --primary-filter: invert(46%) sepia(18%) saturate(1323%) hue-rotate(67deg)
+    brightness(92%) contrast(92%);
   --secondary-filter: invert(54%) sepia(13%) saturate(473%) hue-rotate(177deg)
     brightness(83%) contrast(86%);
   --light-filter: invert(92%) sepia(100%) saturate(23%) hue-rotate(251deg)
