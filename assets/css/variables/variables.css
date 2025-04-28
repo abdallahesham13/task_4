@@ -1,5 +1,6 @@
 :root {
   --primary-color: #41843a;
+  --primary-color-100: #EDF6EC;
   --secondary-color: #6e7887;
   --dark-color: #1d1d35;
   --light-color: #fff;
@@ -7,7 +8,10 @@
   --neutral-700: #6e7887;
   --neutral-500:#98A1AE;
   --neutral-400: #d1d5db;
-  --main-gradient: linear-gradient(to right, #8cc285 0%, #466143 100%);
+  --neutral-300: #E2E5E9;
+  --neutral-200: #EDF1F5;
+  --neutral-100: #F9FAFB;
+  --main-gradient: linear-gradient(to left, #8cc285 0%, #466143 100%);
   --primary-filter: invert(46%) sepia(18%) saturate(1323%) hue-rotate(67deg)
     brightness(92%) contrast(92%);
   --secondary-filter: invert(54%) sepia(13%) saturate(473%) hue-rotate(177deg)
@@ -19,4 +23,5 @@
   --danger-filter: invert(17%) sepia(72%) saturate(6801%) hue-rotate(357deg)
     brightness(100%) contrast(115%);
   --div-shadow: 0 0.25rem 0.375rem 0 hsla(0, 0%, 4%, 0.08);
+  --kit-shadow: 0 0.1875rem 1.3125rem 0 hsla(0, 0%, 0%, 0.16);
 }/*# sourceMappingURL=variables.css.map */

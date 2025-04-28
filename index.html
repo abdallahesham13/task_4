@@ -163,7 +163,7 @@
           >
             <div class="col-md-12 col-lg-4 order-2 order-lg-1">
               <ul
-                class="nav nav-pills justify-content-center row g-2"
+                class="nav nav-pills justify-content-center row g-2 pe-0"
                 id="pills-tab"
                 role="tablist"
               >
@@ -253,8 +253,8 @@
               role="tabpanel"
               aria-labelledby="today-tab"
             >
-              <div class="row inbox-details-container outbox w-100">
-                <div class="col-md-12 col-lg-4 close-card rounded">
+              <div class="row inbox-details-container outbox w-100 p-0 m-0">
+                <div class="col-md-12 col-lg-4 close-card rounded pe-0">
                   <div class="transactions rounded w-100">
                     <div
                       class="transaction-head d-flex justify-content-between align-items-center"
@@ -592,7 +592,7 @@
                 </div>
 
                 <div
-                  class="col-md-12 col-lg-8 rounded fullscreen qBox py-2 px-3 custom-scroll"
+                  class="col-md-12 col-lg-8 rounded fullscreen qBox py-3 px-3 custom-scroll"
                 >
                   <div class="inbox-content">
                     <div
@@ -612,10 +612,177 @@
                       </span>
                     </div>
                     <div
-                      class="inbox-details d-flex justify-content-start align-items-center gap-2"
+                      class="inbox-details d-flex justify-content-start align-items-center gap-2 receiver mb-4"
                     >
                       <span class="inbox-details-subject">المرسل اليه</span>
-                      <span class="inbox-details-title">أرشيف شئون الموظفين</span>
+                      <span class="inbox-details-title"
+                        >أرشيف شئون الموظفين</span
+                      >
+                    </div>
+
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                      <li class="nav-item" role="presentation">
+                        <button
+                          class="nav-link active d-flex justify-content-center align-items-center"
+                          id="explanations-tab"
+                          data-bs-toggle="tab"
+                          data-bs-target="#explanations"
+                          type="button"
+                          role="tab"
+                          aria-controls="explanations"
+                          aria-selected="true"
+                        >
+                          <img
+                            src="assets/images/icons/explains.svg"
+                            class="nav-img"
+                            loading="lazy"
+                            alt=""
+                          />
+                        </button>
+                        <p class="nav-link-text text-center">الشروحات</p>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <button
+                          class="nav-link d-flex justify-content-center align-items-center"
+                          id="attachments-tab"
+                          data-bs-toggle="tab"
+                          data-bs-target="#attachments"
+                          type="button"
+                          role="tab"
+                          aria-controls="attachments"
+                          aria-selected="false"
+                        >
+                          <img
+                            src="assets/images/icons/attachements.svg"
+                            class="nav-img"
+                            loading="lazy"
+                            alt=""
+                          />
+                        </button>
+                        <p class="nav-link-text text-center">المرفقات</p>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <button
+                          class="nav-link d-flex justify-content-center align-items-center"
+                          id="letters-tab"
+                          data-bs-toggle="tab"
+                          data-bs-target="#letters"
+                          type="button"
+                          role="tab"
+                          aria-controls="letters"
+                          aria-selected="false"
+                        >
+                          <img
+                            src="assets/images/icons/letter.svg"
+                            class="nav-img"
+                            loading="lazy"
+                            alt=""
+                          />
+                        </button>
+                        <p class="nav-link-text text-center">الخطاب</p>
+                      </li>
+                    </ul>
+
+                    <div class="tab-content pt-3" id="myTabContent">
+                      <div
+                        class="tab-pane fade show active"
+                        id="explanations"
+                        role="tabpanel"
+                        aria-labelledby="explanations-tab"
+                      >
+                        <p>Here you can provide detailed explanations.</p>
+                      </div>
+                      <div
+                        class="tab-pane fade"
+                        id="attachments"
+                        role="tabpanel"
+                        aria-labelledby="attachments-tab"
+                      >
+                        <div class="pane-head d-flex align-items-center">
+                          <p class="title m-0">المرفقات</p>
+                          <div class="dropdown" id="btnAttachsActions">
+                            <div class="circle-dots">
+                              <button
+                                class="dropdown-toggle circle-dots_btn"
+                                type="button"
+                                id="dropdownMenuButton1"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                              >
+                                <img
+                                  src="assets/images/icons/dots.svg"
+                                  data-img="svg"
+                                  class="circle-dots_img"
+                                />
+                              </button>
+                              <ul
+                                class="dropdown-menu dropdown-items kit-shadow"
+                                aria-labelledby="dropdownMenuButton1"
+                              >
+                                <li
+                                  id="btnViewAllAttach"
+                                  class="dropdown-item result-item"
+                                >
+                                  <img
+                                    src="assets/images/icons/grid.svg"
+                                    alt="Grid Icon"
+                                    data-img="svg"
+                                  />
+                                  <p class="text-end m-0">عرض كلي</p>
+                                </li>
+
+                                <li
+                                  id="btnViewSeqAttach"
+                                  class="dropdown-item result-item"
+                                >
+                                  <img
+                                    src="assets/images/icons/list.svg"
+                                    alt="List Icon"
+                                    data-img="svg"
+                                  />
+                                  <p class="text-end m-0">عرض تسلسلي</p>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="attach-container card d-flex align-items-center">
+                          <div class="card-content d-flex align-items-center">
+                            <div class="attach-box">
+                              <div class="attach-box-img">
+                                <img
+                                  src="assets/images/icons/excell.svg"
+                                  alt=""
+                                />
+                              </div>
+                              <div class="info gre">
+                                <div class="top-container">
+                                  <span class="date">1446/10/29</span>
+                                </div>
+                                <span class="address">أخرى</span>
+                                <h5 class="name">يحيي خيري رمضان العدوي</h5>
+                              </div>
+                              <div class="hover-card">
+                                <p>التاريخ : 2024/07/22</p>
+                                <p>النوع : أخرى</p>
+                                <p>المستخدم : علي محمد عوض ملحي</p>
+                                <p>الحجم : KB 52.85</p>
+                                <p>العنوان : مذكرة داخلية</p>
+                                <p>رقم المرفق : 141155</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="tab-pane fade"
+                        id="letters"
+                        role="tabpanel"
+                        aria-labelledby="letters-tab"
+                      >
+                        <p>Manage your letters here.</p>
+                      </div>
                     </div>
                   </div>
                 </div>
