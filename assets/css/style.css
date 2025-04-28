@@ -92,7 +92,6 @@ body {
   padding: 0;
 }
 .up-navbar .upper_nav .upper_nav_item {
-  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -110,22 +109,84 @@ body {
   padding-block: 0.35rem;
   padding-inline: 0.9375rem;
   display: flex;
-  align-items: center;
-  align-content: center;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: nowrap;
   position: sticky;
-  inset-block-start: 0;
+  top: 0;
   z-index: 99;
   background-color: var(--light-color);
   box-shadow: var(--div-shadow);
-  transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out;
+}
+.navbar .navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+  margin: 0px;
+}
+.navbar .hamburger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 1001;
+  position: relative;
+}
+.navbar .hamburger-menu .line {
+  width: 25px;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: all 0.3s ease;
+}
+.navbar .hamburger-menu .close-icon {
+  display: none;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  transition: all 0.3s ease;
+}
+.navbar .hamburger-menu.active .line {
+  display: none;
+}
+.navbar .hamburger-menu.active .close-icon {
+  display: block;
+}
+.navbar .navbar-links {
+  display: flex;
+  gap: 1rem;
+}
+@media (max-width: 767px) {
+  .navbar .navbar-links {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background: var(--light-color);
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 250px;
+    padding: 2rem 1rem;
+    box-shadow: var(--div-shadow);
+    transition: right 0.4s ease, opacity 0.4s ease;
+    opacity: 0;
+    z-index: 1000;
+  }
+}
+@media (max-width: 767px) {
+  .navbar .navbar-links.active {
+    right: 0;
+    opacity: 1;
+  }
+}
+.navbar .navbar-end {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 .navbar .navbar-end .navbar-end__item {
   display: flex;
-  display: flex;
   align-items: center;
-  align-content: center;
   justify-content: center;
   gap: 0.5rem;
   cursor: pointer;
@@ -140,18 +201,22 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  transition: all 0.3s ease 0s;
+  transition: all 0.3s ease;
 }
-.navbar .navbar-end .navbar-end__item .user-image .image {
+.navbar .navbar-end .navbar-end__item .user-image img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-@media (max-width: 768px) {
+.navbar .navbar-end .navbar-end__item .user-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (max-width: 767px) {
   .navbar .navbar-end .navbar-end__item .user-name {
-    max-width: -moz-min-content;
-    max-width: min-content;
+    display: none;
   }
 }
 .navbar .navbar-end .navbar-end__item:hover .user-image {
@@ -159,6 +224,11 @@ body {
 }
 .navbar .navbar-end .navbar-end__item:hover .user-name {
   color: var(--primary-color);
+}
+@media (max-width: 767px) {
+  .navbar .hamburger-menu {
+    display: flex;
+  }
 }
 
 .main_layout {
@@ -237,6 +307,11 @@ body {
   flex-direction: column;
   justify-content: start;
 }
+@media (max-width: 767px) {
+  .sidebar.sidebar-closed {
+    display: none;
+  }
+}
 .sidebar.sidebar-closed a {
   text-align: start;
   font-size: 0;
@@ -310,6 +385,11 @@ body {
 .main_content .tabs-contain .nav-link.active .tab-text {
   color: var(--light-color);
 }
+@media (max-width: 767px) {
+  .main_content .tabs-contain .search-box {
+    margin-bottom: 10px;
+  }
+}
 .main_content .tabs-contain .search-box .box-search_start {
   padding-block: 0.77rem;
   padding-inline: 0.8rem;
@@ -359,6 +439,12 @@ body {
 .main_content .tab-content {
   margin-top: 10px;
 }
+@media (max-width: 767px) {
+  .main_content .tab-content .close-card {
+    padding-left: 0px;
+    margin-top: 10px;
+  }
+}
 .main_content .tab-content .transactions {
   height: 100%;
   margin-bottom: 1.25rem;
@@ -374,7 +460,7 @@ body {
   padding: 1rem 0.8rem;
   border-radius: 0.3125rem;
   border-bottom: 1px solid var(--neutral-400);
-  background-color: var(--neutral-50);
+  background-color: var(--neutral-100);
 }
 .main_content .tab-content .transactions .transaction-head .transaction-title {
   font-size: 0.875rem;
@@ -386,6 +472,9 @@ body {
 .main_content .tab-content .transactions .transaction-head .transaction-icon {
   cursor: pointer !important;
   pointer-events: auto !important;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 .main_content .tab-content .transactions .transaction-head .transaction-icon .fa-redo {
   font-size: 12px !important;
@@ -393,6 +482,14 @@ body {
 .main_content .tab-content .transactions .transaction-head .transaction-icon .see-all {
   font-size: 12px;
   color: var(--dark-color);
+}
+.main_content .tab-content .transactions .transaction-head .transaction-icon .btn-toggle-collapse {
+  font-size: 1rem;
+  color: var(--primary-color);
+  transition: transform 0.3s ease;
+}
+.main_content .tab-content .transactions .transaction-head .transaction-icon .btn-toggle-collapse[aria-expanded=true] i {
+  transform: rotate(180deg);
 }
 @media (min-width: 991px) {
   .main_content .tab-content .transactions .transactions_wrapper.collapse:not(.show) {
@@ -402,78 +499,86 @@ body {
     overflow-y: auto;
     padding-inline: 0.5rem;
   }
-  .main_content .tab-content .transactions .transaction-card {
-    position: relative;
-    background-color: var(--light-color);
-    border: 0.0625rem solid transparent;
-    border-radius: 0.3125rem;
-    padding: 0.4rem 0.5rem;
-    margin: 0.4375rem auto 0 auto;
-    transition: all 0.2s ease-in-out 0s;
-    box-shadow: var(--div-shadow);
+}
+@media (max-width: 990px) {
+  .main_content .tab-content .transactions .transactions_wrapper.collapse {
+    max-height: 11rem;
     overflow: hidden;
+    overflow-y: auto;
+    padding-inline: 0.5rem;
   }
-  .main_content .tab-content .transactions .transaction-card .wrapper-head .wrapper-title {
-    padding: 4px 6px;
-    background-color: var(--primary-color);
-    border-radius: 4px;
-  }
-  .main_content .tab-content .transactions .transaction-card .wrapper-head .wrapper-title .title-text {
-    color: var(--light-color);
-    font-size: 10px;
-    font-weight: bold;
-  }
-  .main_content .tab-content .transactions .transaction-card .wrapper-head .title-img .number {
-    font-size: 15px;
-    color: var(--dark-color);
-  }
-  .main_content .tab-content .transactions .transaction-card .wrapper-head .title-img .attachement-icon {
-    width: 24px;
-    height: 24px;
-    -o-object-fit: contain;
-       object-fit: contain;
-    filter: var(--primary-filter);
-  }
-  .main_content .tab-content .transactions .transaction-card .wrapper-content {
-    flex-direction: column;
-    margin-top: 10px;
-  }
-  .main_content .tab-content .transactions .transaction-card .wrapper-content .wrapper-desc {
-    font-size: 14px;
-    font-weight: bold;
-  }
-  .main_content .tab-content .transactions .transaction-card .wrapper-content .date {
-    font-size: 13px;
-    color: var(--neutral-500);
-    width: 100%;
-    margin-inline-start: 4px;
-  }
-  .main_content .tab-content .transactions .transaction-card:hover {
-    border-color: var(--primary-color);
-    cursor: pointer;
-  }
-  .main_content .tab-content .transactions .transaction-card.active {
-    background: var(--main-gradient);
-    border: none;
-  }
-  .main_content .tab-content .transactions .transaction-card.active .wrapper-title {
-    background-color: var(--light-color);
-  }
-  .main_content .tab-content .transactions .transaction-card.active .wrapper-title .title-text {
-    color: var(--primary-color);
-  }
-  .main_content .tab-content .transactions .transaction-card.active .title-img .number {
-    color: var(--light-color);
-  }
-  .main_content .tab-content .transactions .transaction-card.active .title-img .attachement-icon {
-    filter: var(--light-filter);
-  }
-  .main_content .tab-content .transactions .transaction-card.active .wrapper-desc {
-    color: var(--light-color);
-  }
-  .main_content .tab-content .transactions .transaction-card.active .date {
-    color: var(--light-color);
-  }
+}
+.main_content .tab-content .transactions .transaction-card {
+  position: relative;
+  background-color: var(--light-color);
+  border: 0.0625rem solid transparent;
+  border-radius: 0.3125rem;
+  padding: 0.4rem 0.5rem;
+  margin: 0.4375rem auto 0 auto;
+  transition: all 0.2s ease-in-out 0s;
+  box-shadow: var(--div-shadow);
+  overflow: hidden;
+}
+.main_content .tab-content .transactions .transaction-card .wrapper-head .wrapper-title {
+  padding: 4px 6px;
+  background-color: var(--primary-color);
+  border-radius: 4px;
+}
+.main_content .tab-content .transactions .transaction-card .wrapper-head .wrapper-title .title-text {
+  color: var(--light-color);
+  font-size: 10px;
+  font-weight: bold;
+}
+.main_content .tab-content .transactions .transaction-card .wrapper-head .title-img .number {
+  font-size: 15px;
+  color: var(--dark-color);
+}
+.main_content .tab-content .transactions .transaction-card .wrapper-head .title-img .attachement-icon {
+  width: 24px;
+  height: 24px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  filter: var(--primary-filter);
+}
+.main_content .tab-content .transactions .transaction-card .wrapper-content {
+  flex-direction: column;
+  margin-top: 10px;
+}
+.main_content .tab-content .transactions .transaction-card .wrapper-content .wrapper-desc {
+  font-size: 14px;
+  font-weight: bold;
+}
+.main_content .tab-content .transactions .transaction-card .wrapper-content .date {
+  font-size: 13px;
+  color: var(--neutral-500);
+  width: 100%;
+  margin-inline-start: 4px;
+}
+.main_content .tab-content .transactions .transaction-card:hover {
+  border-color: var(--primary-color);
+  cursor: pointer;
+}
+.main_content .tab-content .transactions .transaction-card.active {
+  background: var(--main-gradient);
+  border: none;
+}
+.main_content .tab-content .transactions .transaction-card.active .wrapper-title {
+  background-color: var(--light-color);
+}
+.main_content .tab-content .transactions .transaction-card.active .wrapper-title .title-text {
+  color: var(--primary-color);
+}
+.main_content .tab-content .transactions .transaction-card.active .title-img .number {
+  color: var(--light-color);
+}
+.main_content .tab-content .transactions .transaction-card.active .title-img .attachement-icon {
+  filter: var(--light-filter);
+}
+.main_content .tab-content .transactions .transaction-card.active .wrapper-desc {
+  color: var(--light-color);
+}
+.main_content .tab-content .transactions .transaction-card.active .date {
+  color: var(--light-color);
 }
 .main_content .tab-content .qBox {
   position: relative;

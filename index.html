@@ -26,24 +26,30 @@
             <i class="far fa-calendar"></i>
             <span class="date">2025/04/23 - 25/10/1446</span>
           </li>
-
           <li class="upper_nav_item current-time">
             <i class="far fa-clock"></i>
             <time class="time" id="lblTime">11:34 صباحًا</time>
           </li>
         </ul>
       </div>
+
       <nav class="navbar navbar-expand-lg" id="navbar">
         <div class="navbar-brand">
           <div class="hamburger-menu" id="hamburger-menu">
             <div class="line"></div>
             <div class="line"></div>
             <div class="line"></div>
+            <i class="fas fa-times close-icon"></i>
+            <!-- FontAwesome close icon -->
           </div>
 
           <a class="navbar-brand-logo" href="#">
             <img class="logo" src="assets/images/logo/logo.svg" alt="Logo" />
           </a>
+        </div>
+
+        <div class="navbar-links" id="navbar-links">
+          <!-- Add your links here if needed -->
         </div>
 
         <div class="navbar-end">
@@ -260,13 +266,30 @@
                       class="transaction-head d-flex justify-content-between align-items-center"
                     >
                       <h2 class="transaction-title">المعاملات</h2>
-                      <div class="transaction-icon">
+                      <div
+                        class="transaction-icon d-flex align-items-center gap-1"
+                      >
                         <i class="fas fa-redo"></i>
-                        <span class="see-all"> عرض الجميع </span>
+                        <span class="see-all">عرض الجميع</span>
+                        <!-- Added toggle button -->
+                        <button
+                          class="btn-toggle-collapse d-md-none border-0 bg-transparent p-0"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#transactionsCollapse"
+                          aria-expanded="true"
+                          aria-controls="transactionsCollapse"
+                        >
+                          <i class="fas fa-chevron-down"></i>
+                        </button>
                       </div>
                     </div>
 
-                    <div class="transactions_wrapper collapse">
+                    <!-- Updated collapse wrapper -->
+                    <div
+                      id="transactionsCollapse"
+                      class="transactions_wrapper collapse "
+                    >
                       <div class="transaction-card active">
                         <div
                           class="wrapper-head d-flex justify-content-between align-items-center"
@@ -292,13 +315,14 @@
                           class="wrapper-content d-flex justify-content-start align-items-start"
                         >
                           <p class="wrapper-desc">
-                            خطاب تعميد لطلب انتداب برقم (271888 )
+                            خطاب تعميد لطلب انتداب برقم (271888)
                           </p>
-                          <span class="date">
-                            29/10/1446 , 27/04/2025 01:41 م</span
+                          <span class="date"
+                            >29/10/1446 , 27/04/2025 01:41 م</span
                           >
                         </div>
                       </div>
+
                       <div class="transaction-card">
                         <div
                           class="wrapper-head d-flex justify-content-between align-items-center"
@@ -747,7 +771,9 @@
                           </div>
                         </div>
 
-                        <div class="attach-container card d-flex align-items-center">
+                        <div
+                          class="attach-container card d-flex align-items-center"
+                        >
                           <div class="card-content d-flex align-items-center">
                             <div class="attach-box">
                               <div class="attach-box-img">
