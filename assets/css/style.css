@@ -61,13 +61,13 @@ body {
   }
 }
 
-.transactions_wrapper::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 0.35rem;
   height: 0.35rem;
   background-color: var(--light-color, hsl(0, 0%, 100%));
 }
 
-.transactions_wrapper::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   border-radius: 0.7125rem;
   background-color: var(--neutral-400, hsl(216, 12%, 84%));
 }
@@ -585,7 +585,9 @@ body {
   border-radius: 0.25rem;
   background-color: var(--light-color);
   box-shadow: var(--div-shadow);
-  overflow: auto;
+  max-height: calc(100vh - 14.5rem);
+  overflow: hidden;
+  overflow-y: auto;
 }
 .main_content .tab-content .qBox .inbox-details .inbox-details-subject {
   font-size: 17px;
@@ -776,4 +778,70 @@ body {
 }
 .main_content .tab-content .qBox .tab-pane .attach-container .card-content .attach-box:hover .hover-card {
   display: block;
+}
+.main_content .tab-content .qBox .tab-pane .attach-container .card-content .explain-box {
+  width: 100%;
+  border: 1px solid #d9d9d9;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 0.9375rem;
+  padding-right: 2.75rem;
+  box-sizing: border-box;
+  font-family: "Tahoma", sans-serif;
+  font-size: 13px;
+  color: #333;
+  direction: rtl;
+  position: relative;
+}
+.main_content .tab-content .qBox .tab-pane .attach-container .card-content .explain-box .explain-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.main_content .tab-content .qBox .tab-pane .attach-container .card-content .explain-box .explain-header .explain-title {
+  font-weight: bold;
+  font-size: 14px;
+  color: #444;
+}
+.main_content .tab-content .qBox .tab-pane .attach-container .card-content .explain-box .explain-header .explain-number {
+  width: 1.8125rem;
+  height: 2.35rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-bottom-left-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--primary-color);
+  color: #fff;
+  font-size: 14px;
+}
+.main_content .tab-content .qBox .tab-pane .attach-container .card-content .explain-box .explain-meta {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 11px;
+  color: #888;
+}
+.main_content .tab-content .qBox .tab-pane .attach-container .card-content .explain-box .explain-meta .explain-time {
+  margin-left: 10px;
+}
+.main_content .tab-content .qBox .tab-pane .attach-container .card-content .explain-box .explain-content {
+  background-color: #fff;
+}
+.main_content .tab-content .qBox .tab-pane .attach-container .card-content .explain-box .explain-content .explain-row {
+  margin-bottom: 10px;
+  line-height: 1.5;
+  color: #333;
+}
+.main_content .tab-content .qBox .tab-pane .attach-container .card-content .explain-box .explain-content .explain-divider {
+  border-top: 1px dashed #ccc;
+  margin: 10px 0;
+}
+.main_content .tab-content .qBox .tab-pane .attach-container .card-content .explain-box .explain-content .explain-footer {
+  margin-top: 8px;
+  color: #333;
+  font-size: 13px;
 }/*# sourceMappingURL=style.css.map */

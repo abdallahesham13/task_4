@@ -35,12 +35,13 @@ body {
     max-height: 100dvh;
   }
 }
-.transactions_wrapper::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 0.35rem;
   height: 0.35rem;
   background-color: var(--light-color, hsl(0deg, 0%, 100%));
 }
-.transactions_wrapper::-webkit-scrollbar-thumb {
+
+::-webkit-scrollbar-thumb {
   border-radius: 0.7125rem;
   background-color: var(--neutral-400, hsl(216deg, 12%, 84%));
 }

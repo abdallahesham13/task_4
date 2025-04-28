@@ -40,7 +40,6 @@
             <div class="line"></div>
             <div class="line"></div>
             <i class="fas fa-times close-icon"></i>
-            <!-- FontAwesome close icon -->
           </div>
 
           <a class="navbar-brand-logo" href="#">
@@ -271,7 +270,7 @@
                       >
                         <i class="fas fa-redo"></i>
                         <span class="see-all">عرض الجميع</span>
-                        <!-- Added toggle button -->
+
                         <button
                           class="btn-toggle-collapse d-md-none border-0 bg-transparent p-0"
                           type="button"
@@ -285,10 +284,9 @@
                       </div>
                     </div>
 
-                    <!-- Updated collapse wrapper -->
                     <div
                       id="transactionsCollapse"
-                      class="transactions_wrapper collapse "
+                      class="transactions_wrapper collapse"
                     >
                       <div class="transaction-card active">
                         <div
@@ -714,7 +712,92 @@
                         role="tabpanel"
                         aria-labelledby="explanations-tab"
                       >
-                        <p>Here you can provide detailed explanations.</p>
+                        <div class="pane-head d-flex align-items-center">
+                          <p class="title m-0">الشروحات (3)</p>
+                          <div class="dropdown" id="btnAttachsActions">
+                            <div class="circle-dots">
+                              <button
+                                class="dropdown-toggle circle-dots_btn"
+                                type="button"
+                                id="dropdownMenuButton1"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                              >
+                                <img
+                                  src="assets/images/icons/dots.svg"
+                                  data-img="svg"
+                                  class="circle-dots_img"
+                                />
+                              </button>
+                              <ul
+                                class="dropdown-menu dropdown-items kit-shadow"
+                                aria-labelledby="dropdownMenuButton1"
+                              >
+                                <li
+                                  id="btnViewAllAttach"
+                                  class="dropdown-item result-item"
+                                >
+                                  <img
+                                    src="assets/images/icons/grid.svg"
+                                    alt="Grid Icon"
+                                    data-img="svg"
+                                  />
+                                  <p class="text-end m-0">عرض كلي</p>
+                                </li>
+
+                                <li
+                                  id="btnViewSeqAttach"
+                                  class="dropdown-item result-item"
+                                >
+                                  <img
+                                    src="assets/images/icons/list.svg"
+                                    alt="List Icon"
+                                    data-img="svg"
+                                  />
+                                  <p class="text-end m-0">عرض تسلسلي</p>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div
+                          class="attach-container card d-flex align-items-center"
+                        >
+                          <div class="card-content d-flex align-items-center">
+                            <div class="explain-box">
+                              <div class="explain-header">
+                                <div class="explain-title">
+                                  التوجيه: لإكمال اللازم
+                                  <div class="explain-number">1</div>
+                                </div>
+                                <div class="explain-meta">
+                                  <div class="explain-time">03:37 م</div>
+                                  <div class="explain-date">
+                                    16/07/2024، 1446/01/10
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="explain-content">
+                                <div class="explain-row">
+                                  <span
+                                    >من: مدير إدارة الموارد البشرية - علي محمد
+                                    عوض ماهي</span
+                                  >
+                                </div>
+                                <div class="explain-row">
+                                  <span
+                                    >إلى: مدير إدارة الموارد البشرية - علي محمد
+                                    عوض ماهي</span
+                                  >
+                                </div>
+                                <div class="explain-divider"></div>
+                                <div class="explain-footer">nbnmbm</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                       <div
                         class="tab-pane fade"

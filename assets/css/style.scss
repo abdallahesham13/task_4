@@ -557,8 +557,9 @@
       border-radius: 0.25rem;
       background-color: var(--light-color);
       box-shadow: var(--div-shadow);
-      // height: 100%;
-      overflow: auto;
+      max-height: calc(100vh - 14.5rem);
+      overflow: hidden;
+      overflow-y: auto;
       .inbox-details {
         .inbox-details-subject {
           font-size: 17px;
@@ -745,6 +746,80 @@
                 background-color: var(--neutral-100);
                 .hover-card {
                   display: block;
+                }
+              }
+            }
+            .explain-box {
+              width: 100%;
+              border: 1px solid #d9d9d9;
+              background-color: #fff;
+              border-radius: 4px;
+              padding: 0.9375rem;
+              padding-right: 2.75rem;
+              box-sizing: border-box;
+              font-family: "Tahoma", sans-serif;
+              font-size: 13px;
+              color: #333;
+              direction: rtl;
+              position: relative;
+
+              .explain-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 8px;
+
+                .explain-title {
+                  font-weight: bold;
+                  font-size: 14px;
+                  color: #444;
+                }
+
+                .explain-number {
+                  width: 1.8125rem;
+                  height: 2.35rem;
+                  position: absolute;
+                  right: 0;
+                  top: 0;
+                  border-bottom-left-radius: 5px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  background: var(--primary-color);
+                  color: #fff;
+                  font-size: 14px;
+                }
+              }
+
+              .explain-meta {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                font-size: 11px;
+                color: #888;
+                .explain-time {
+                  margin-left: 10px;
+                }
+              }
+
+              .explain-content {
+                background-color: #fff;
+
+                .explain-row {
+                  margin-bottom: 10px;
+                  line-height: 1.5;
+                  color: #333;
+                }
+
+                .explain-divider {
+                  border-top: 1px dashed #ccc;
+                  margin: 10px 0;
+                }
+
+                .explain-footer {
+                  margin-top: 8px;
+                  color: #333;
+                  font-size: 13px;
                 }
               }
             }
