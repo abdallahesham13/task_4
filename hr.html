@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="...." />
+    <meta name="author" content="Abdallah Hesham" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>elite</title>
+    <link
+      rel="shortcut icon"
+      href="assets/images/logo/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="assets/css/lib/fontawesome.min.css" />
+    <link rel="stylesheet" href="assets/css/lib/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <main class="main-page">
+      <div class="up-navbar">
+        <ul class="upper_nav">
+          <li class="upper_nav_item current-date">
+            <i class="far fa-calendar"></i>
+            <span class="date">2025/04/23 - 25/10/1446</span>
+          </li>
+          <li class="upper_nav_item current-time">
+            <i class="far fa-clock"></i>
+            <time class="time" id="lblTime">11:34 صباحًا</time>
+          </li>
+        </ul>
+      </div>
+
+      <nav class="navbar navbar-expand-lg" id="navbar">
+        <div class="navbar-brand">
+          <div class="hamburger-menu" id="hamburger-menu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <i class="fas fa-times close-icon"></i>
+          </div>
+
+          <a class="navbar-brand-logo" href="#">
+            <img class="logo" src="assets/images/logo/logo.svg" alt="Logo" />
+          </a>
+        </div>
+
+        <div class="navbar-links" id="navbar-links">
+          <!-- Add your links here if needed -->
+        </div>
+
+        <div class="navbar-end">
+          <div class="navbar-end__item dropdown" id="navbarDropdown">
+            <div
+              class="d-flex align-items-center gap-1 dropdown-toggle"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              id="userDropdown"
+            >
+              <div class="user-image me-2">
+                <img
+                  class="img"
+                  src="assets/images/logo/user.svg"
+                  alt="Man Profile Logo"
+                />
+              </div>
+              <span class="user-name me-2">مهند طارق محمد</span>
+              <div class="arrow-icon"></div>
+            </div>
+
+            <ul
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="userDropdown"
+            >
+              <li><a class="dropdown-item" href="#">الملف الشخصي</a></li>
+              <li><a class="dropdown-item" href="#">الإعدادات</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" href="#">تسجيل الخروج</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="main_layout">
+        <aside id="sidebar" class="sidebar sidebar-closed">
+          <button id="toggleBtn" class="btn mb-2">
+            <img
+              src="assets/images/sidemenu/list.svg"
+              class="side-btn"
+              alt=""
+            />
+          </button>
+
+          <button
+            class="sidemenu-btn btn mb-2"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainMenu"
+          >
+            <img
+              src="assets/images/sidemenu/home.svg"
+              class="side-btn"
+              alt=""
+            />
+          </button>
+          <ul id="mainMenu" class="collapse list-unstyled ps-3">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Profile</a></li>
+          </ul>
+
+          <button
+            class="sidemenu-btn btn mb-2"
+            data-bs-toggle="collapse"
+            data-bs-target="#communicationMenu"
+          >
+            <img
+              src="assets/images/sidemenu/list.svg"
+              class="side-btn"
+              alt=""
+            />
+          </button>
+          <ul id="communicationMenu" class="collapse list-unstyled ps-3">
+            <li><a href="#">Messages</a></li>
+          </ul>
+
+          <button
+            class="sidemenu-btn btn mb-2"
+            data-bs-toggle="collapse"
+            data-bs-target="#settingsMenu"
+          >
+            <img
+              src="assets/images/sidemenu/email.svg"
+              class="side-btn"
+              alt=""
+            />
+          </button>
+          <ul id="settingsMenu" class="collapse list-unstyled ps-3">
+            <li><a href="#">Settings</a></li>
+          </ul>
+        </aside>
+
+        <div class="main_content">
+          <div class="header d-flex justify-content-between align-items-center">
+            <ol class="breadcrumb m-0 py-2" aria-label="breadcrumb">
+              <li
+                class="breadcrumb-item d-flex justify-content-center align-items-center"
+              >
+                <a href="#" class="home-bc-link ms-1">
+                  <img src="assets/images/icons/fa_home.svg" data-bc="" />
+                </a>
+              </li>
+              <li
+                class="breadcrumb-item d-flex justify-content-center align-items-center"
+              >
+                <a href="#" class="breadcrumb-link ms-1">الموارد البشرية</a>
+              </li>
+
+              <li
+                class="breadcrumb-item d-flex justify-content-center align-items-center active"
+                aria-current="page"
+              >
+                الترقيات
+              </li>
+              <li
+                class="breadcrumb-item d-flex justify-content-center align-items-center active"
+                aria-current="page"
+              >
+                طلبات الترقية
+              </li>
+              <li
+                class="breadcrumb-item d-flex justify-content-center align-items-center active"
+                aria-current="page"
+              >
+                تقديم طلب ترقية
+              </li>
+            </ol>
+
+            <a
+              class="qBtn back-btn d-flex justify-content-center align-items-center"
+              href="#"
+            >
+              <span>عودة</span>
+            </a>
+          </div>
+          <div class="content-container">
+            <div class="card employee-card">
+              <div
+                class="card-header d-flex justify-content-between align-items-center p-0"
+              >
+                <span class="data-title">بيانات الموظف</span>
+                <button
+                  class="btn p-0 border-0 bg-transparent toggle-btn"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#employeeInfo"
+                  aria-expanded="true"
+                  aria-controls="employeeInfo"
+                >
+                  <img
+                    src="assets/images/icons/chevron-down.svg"
+                    class="arrow"
+                    loading="lazy"
+                    alt=""
+                  />
+                </button>
+              </div>
+
+              <div class="collapse show" id="employeeInfo">
+                <div class="card-body scroll-area p-0">
+                  <form>
+                    <div class="row gy-3">
+                      <div class="col-md-3">
+                        <label class="form-label">اسم الموظف</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          value="عبد المحسن بن محمد العنزي"
+                          disabled
+                        />
+                      </div>
+                      <div class="col-md-3">
+                        <label class="form-label">رقم الموظف</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          value="0342169"
+                          disabled
+                        />
+                      </div>
+                      <div class="col-md-3">
+                        <label class="form-label">رقم الهوية الوطنية</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          value="1123456789"
+                          disabled
+                        />
+                      </div>
+
+                      <div class="col-md-3">
+                        <label class="form-label">رقم الجوال</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          value="966514789222"
+                          disabled
+                        />
+                      </div>
+                      <div class="col-md-1">
+                        <label class="form-label">المرتبة</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          value="15"
+                          disabled
+                        />
+                      </div>
+                      <div class="col-md-1">
+                        <label class="form-label">الدرجة</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          value="5"
+                          disabled
+                        />
+                      </div>
+
+                      <div class="col-md-3">
+                        <label class="form-label">الراتب الأساسي</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          value="24315"
+                          disabled
+                        />
+                      </div>
+                      <div class="col-md-3">
+                        <label class="form-label"
+                          >تاريخ التعيين على المرتبة</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          value="2013/03/13"
+                          disabled
+                        />
+                      </div>
+                      <div class="col-md-3">
+                        <label class="form-label">تاريخ آخر ترقية هجري</label>
+                        <input type="text" class="form-control" disabled />
+                      </div>
+                      <div class="col-md-3">
+                        <label class="form-label">تاريخ آخر ترقية ميلادي</label>
+                        <input type="text" class="form-control" disabled />
+                      </div>
+                      <div class="col-md-3">
+                        <label class="form-label">تاريخ تقديم الطلب</label>
+                        <input type="text" class="form-control" disabled />
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="tabs-container mt-4">
+              <ul class="nav nav-tabs p-0" id="tabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    data-bs-toggle="tab"
+                    data-bs-target="#evaluation"
+                    type="button"
+                    role="tab"
+                  >
+                    تقييم الأداء الوظيفي
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    data-bs-toggle="tab"
+                    data-bs-target="#training"
+                    type="button"
+                    role="tab"
+                  >
+                    برامج التدريب والتطوير
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    data-bs-toggle="tab"
+                    data-bs-target="#courses"
+                    type="button"
+                    role="tab"
+                  >
+                    الدورات الإلكترونية
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    data-bs-toggle="tab"
+                    data-bs-target="#achievements"
+                    type="button"
+                    role="tab"
+                  >
+                    المبادرات والإنجازات
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link active"
+                    id="pledge-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#pledge"
+                    type="button"
+                    role="tab"
+                  >
+                    التعهد
+                  </button>
+                </li>
+              </ul>
+
+              <div class="tab-content mt-4" id="tabsContent">
+                <div
+                  class="tab-pane fade show active"
+                  id="pledge"
+                  role="tabpanel"
+                >
+                  <form class="pledge-form row">
+                    <div class="col-md-6 mb-4">
+                      <label class="form-label d-block">
+                        هل كنت موقوفًا أو محلًا للمحاكمة في أمور ذات علاقة
+                        بالوظيفة؟ <span class="text-danger">*</span>
+                      </label>
+                      <div
+                        class="form-check form-check-inline custom-radio-disabled"
+                      >
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="q1"
+                          id="q1Yes"
+                        />
+                        <label class="form-check-label" for="q1Yes">نعم</label>
+                      </div>
+                      <div
+                        class="form-check form-check-inline custom-radio-disabled"
+                      >
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="q1"
+                          id="q1No"
+                          checked
+                        />
+                        <label class="form-check-label" for="q1No">لا</label>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                      <label class="form-label d-block"
+                        >هل سبق وتم منحك إجازة (مرافقة أو استثنائية)؟</label
+                      >
+                      <div
+                        class="form-check form-check-inline custom-radio-disabled"
+                      >
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="q2"
+                          id="q2Yes"
+                          checked
+                          disabled
+                        />
+                        <label class="form-check-label" for="q2Yes">نعم</label>
+                      </div>
+                      <div
+                        class="form-check form-check-inline custom-radio-disabled"
+                      >
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="q2"
+                          id="q2No"
+                          disabled
+                        />
+                        <label class="form-check-label" for="q2No">لا</label>
+                      </div>
+                      <button type="button" class="btn btn-sm form-btn">
+                        إجازة استثنائية
+                      </button>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                      <label class="form-label d-block"
+                        >هل صدر قرار بحقكم بخصمكم من العلاوة السنوية؟</label
+                      >
+                      <div
+                        class="form-check form-check-inline custom-radio-disabled"
+                      >
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="q3"
+                          id="q3Yes"
+                          disabled
+                        />
+                        <label class="form-check-label" for="q3Yes">نعم</label>
+                      </div>
+                      <div
+                        class="form-check form-check-inline custom-radio-disabled"
+                      >
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="q3"
+                          id="q3No"
+                          checked
+                          disabled
+                        />
+                        <label class="form-check-label" for="q3No">لا</label>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                      <label class="form-label d-block"
+                        >هل صدر عليك قرار بالسجن 15 يوماً فأكثر؟</label
+                      >
+                      <div
+                        class="form-check form-check-inline custom-radio-disabled"
+                      >
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="q4"
+                          id="q4Yes"
+                          disabled
+                        />
+                        <label class="form-check-label" for="q4Yes">نعم</label>
+                      </div>
+                      <div
+                        class="form-check form-check-inline custom-radio-disabled"
+                      >
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="q4"
+                          id="q4No"
+                          checked
+                          disabled
+                        />
+                        <label class="form-check-label" for="q4No">لا</label>
+                      </div>
+                    </div>
+                  </form>
+
+                  <div class="pledge-bottom mt-4">
+                    <p>
+                      تست نص الاقرار هذا النص هو مثال لنص يمكن أن يستبدل في نفس
+                      المساحة لقد تم توليد هذا النص من مولد النص العربى حيث
+                      يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى
+                      إضافة إلى زيادة عدد الحروف التى يولدها التطبيق إذا كنت
+                      تحتاج إلى عدد أكبر من الفقرات يتيح لك مولد النص العربى
+                      زيادة عدد الفقرات كما تريد النص لن يبدو مقسما ولا يحوي
+                      أخطاء لغوية مولد النص العربى مفيد لمصممي المواقع على وجه
+                      الخصوص حيث يحتاج العميل فى كثير من الأحيان أن يطلع على
+                      صورة حقيقية لتصميم الموقع تست نص الاقرار هذا النص هو مثال
+                      لنص يمكن أن يستبدل في نفس المساحة لقد تم توليد هذا النص من
+                      مولد النص العربى حيث يمكنك أن تولد مثل هذا النص أو العديد
+                      من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها
+                      التطبيق إذا كنت تحتاج إلى عدد أكبر من الفقرات يتيح لك مولد
+                      النص العربى زيادة عدد الفقرات كما تريد النص لن يبدو مقسما
+                      ولا يحوي أخطاء لغوية مولد النص العربى مفيد لمصممي المواقع
+                      على وجه الخصوص حيث يحتاج العميل فى كثير من الأحيان أن يطلع
+                      على صورة حقيقية لتصميم الموقع
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="request-promotion-buttons mt-3">
+            <div class="left-side d-flex justify-content-end align-items-center gap-2 group-btn">
+              <button class="qBtn d-flex justify-content-center align-items-center gap-2">
+                <img src="assets/images/icons/file.svg" />
+
+                <span>حفظ مؤقت</span>
+              </button>
+
+              <button class="qBtn d-flex justify-content-center align-items-center gap-2 primary-btn">
+                <img src="assets/images/icons/send.svg" />
+
+                <span>توقيع و إرسال </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container"></div>
+    </footer>
+
+    <script src="assets/js/lib/fontawesome.min.js"></script>
+    <script src="assets/js/lib/popper.min.js"></script>
+    <script src="assets/js/lib/bootstrap.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

@@ -141,7 +141,7 @@
           </ul>
         </aside>
 
-        <div class="main_content">
+        <div class="main_content" id="mainContent">
           <ol class="breadcrumb m-0 py-2" aria-label="breadcrumb">
             <li
               class="breadcrumb-item d-flex justify-content-center align-items-center"
@@ -712,52 +712,73 @@
                         role="tabpanel"
                         aria-labelledby="explanations-tab"
                       >
-                        <div class="pane-head d-flex align-items-center">
-                          <p class="title m-0">الشروحات (3)</p>
-                          <div class="dropdown" id="btnAttachsActions">
-                            <div class="circle-dots">
-                              <button
-                                class="dropdown-toggle circle-dots_btn"
-                                type="button"
-                                id="dropdownMenuButton1"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                              >
-                                <img
-                                  src="assets/images/icons/dots.svg"
-                                  data-img="svg"
-                                  class="circle-dots_img"
-                                />
-                              </button>
-                              <ul
-                                class="dropdown-menu dropdown-items kit-shadow"
-                                aria-labelledby="dropdownMenuButton1"
-                              >
-                                <li
-                                  id="btnViewAllAttach"
-                                  class="dropdown-item result-item"
+                        <div
+                          class="pane-head d-flex align-items-center justify-content-between"
+                        >
+                          <div
+                            class="head-title d-flex align-items-center gap-2"
+                          >
+                            <p class="title m-0">الشروحات (3)</p>
+                            <div class="dropdown" id="btnAttachsActions">
+                              <div class="circle-dots">
+                                <button
+                                  class="dropdown-toggle circle-dots_btn"
+                                  type="button"
+                                  id="dropdownMenuButton1"
+                                  data-bs-toggle="dropdown"
+                                  aria-expanded="false"
                                 >
                                   <img
-                                    src="assets/images/icons/grid.svg"
-                                    alt="Grid Icon"
+                                    src="assets/images/icons/dots.svg"
                                     data-img="svg"
+                                    class="circle-dots_img"
                                   />
-                                  <p class="text-end m-0">عرض كلي</p>
-                                </li>
+                                </button>
+                                <ul
+                                  class="dropdown-menu dropdown-items kit-shadow"
+                                  aria-labelledby="dropdownMenuButton1"
+                                >
+                                  <li
+                                    id="btnViewAllAttach"
+                                    class="dropdown-item result-item"
+                                  >
+                                    <img
+                                      src="assets/images/icons/grid.svg"
+                                      alt="Grid Icon"
+                                      data-img="svg"
+                                    />
+                                    <p class="text-end m-0">عرض كلي</p>
+                                  </li>
 
-                                <li
-                                  id="btnViewSeqAttach"
-                                  class="dropdown-item result-item"
-                                >
-                                  <img
-                                    src="assets/images/icons/list.svg"
-                                    alt="List Icon"
-                                    data-img="svg"
-                                  />
-                                  <p class="text-end m-0">عرض تسلسلي</p>
-                                </li>
-                              </ul>
+                                  <li
+                                    id="btnViewSeqAttach"
+                                    class="dropdown-item result-item"
+                                  >
+                                    <img
+                                      src="assets/images/icons/list.svg"
+                                      alt="List Icon"
+                                      data-img="svg"
+                                    />
+                                    <p class="text-end m-0">عرض تسلسلي</p>
+                                  </li>
+                                </ul>
+                              </div>
                             </div>
+                          </div>
+                          <div>
+                            <button
+                              class="qBtn d-flex justify-content-center align-items-center gap-1"
+                              role="button"
+                            >
+                              <span>الترتيب</span>
+                      
+                                <img
+                                  src="assets/images/icons/sort-ascending.svg"
+                                  alt="Order Icon"
+                                  class="w-100"
+                                />
+                    
+                            </button>
                           </div>
                         </div>
 
@@ -767,8 +788,11 @@
                           <div class="card-content d-flex align-items-center">
                             <div class="explain-box">
                               <div class="explain-header">
-                                <div class="explain-title">
-                                  التوجيه: لإكمال اللازم
+                                <div class="explain-title-content">
+                                  <p class="explain-title">
+                                    التوجيه :
+                                    <span class="operation">لإكمال اللازم</span>
+                                  </p>
                                   <div class="explain-number">1</div>
                                 </div>
                                 <div class="explain-meta">
@@ -780,17 +804,85 @@
                               </div>
 
                               <div class="explain-content">
-                                <div class="explain-row">
-                                  <span
-                                    >من: مدير إدارة الموارد البشرية - علي محمد
-                                    عوض ماهي</span
-                                  >
+                                <div
+                                  class="explain-row d-flex justify-content-between align-items-center"
+                                >
+                                  <p class="from-to">
+                                    <span class="from">من:</span> مدير إدارة
+                                    الموارد البشرية - علي محمد عوض ماهي
+                                  </p>
+                                  <p class="from-to">
+                                    <span class="to">إلى: </span> مدير إدارة
+                                    الموارد البشرية - علي محمد عوض ماهي
+                                  </p>
                                 </div>
-                                <div class="explain-row">
-                                  <span
-                                    >إلى: مدير إدارة الموارد البشرية - علي محمد
-                                    عوض ماهي</span
-                                  >
+                                <div class="explain-divider"></div>
+                                <div class="explain-footer">nbnmbm</div>
+                              </div>
+                            </div>
+                            <div class="explain-box">
+                              <div class="explain-header">
+                                <div class="explain-title-content">
+                                  <p class="explain-title">
+                                    التوجيه :
+                                    <span class="operation">لإكمال اللازم</span>
+                                  </p>
+                                  <div class="explain-number">1</div>
+                                </div>
+                                <div class="explain-meta">
+                                  <div class="explain-time">03:37 م</div>
+                                  <div class="explain-date">
+                                    16/07/2024، 1446/01/10
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="explain-content">
+                                <div
+                                  class="explain-row d-flex justify-content-between align-items-center"
+                                >
+                                  <p class="from-to">
+                                    <span class="from">من:</span> مدير إدارة
+                                    الموارد البشرية - علي محمد عوض ماهي
+                                  </p>
+                                  <p class="from-to">
+                                    <span class="to">إلى: </span> مدير إدارة
+                                    الموارد البشرية - علي محمد عوض ماهي
+                                  </p>
+                                </div>
+                                <div class="explain-divider"></div>
+                                <div class="explain-footer">nbnmbm</div>
+                              </div>
+                            </div>
+                            <div class="explain-box">
+                              <div class="explain-header">
+                                <div class="explain-title-content">
+                                  <p class="explain-title">
+                                    التوجيه :
+                                    <span class="operation">لإكمال اللازم</span>
+                                  </p>
+                                  <div class="explain-number">1</div>
+                                </div>
+                                <div class="explain-meta">
+                                  <div class="explain-time">03:37 م</div>
+                                  <div class="explain-date">
+                                    16/07/2024، 1446/01/10
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="explain-content">
+                                <div
+                                  class="explain-row d-flex justify-content-between align-items-center"
+                                >
+                                  <p class="from-to">
+                                    <span class="from">من:</span> مدير إدارة
+                                    الموارد البشرية - علي محمد عوض ماهي
+                                  </p>
+                                  <p class="from-to">
+                                    <span class="to">إلى: </span> مدير إدارة
+                                    الموارد البشرية - علي محمد عوض ماهي
+                                  </p>
                                 </div>
                                 <div class="explain-divider"></div>
                                 <div class="explain-footer">nbnmbm</div>
@@ -867,10 +959,79 @@
                               </div>
                               <div class="info gre">
                                 <div class="top-container">
-                                  <span class="date">1446/10/29</span>
+                                  <span class="data">1446/10/29</span>
                                 </div>
-                                <span class="address">أخرى</span>
-                                <h5 class="name">يحيي خيري رمضان العدوي</h5>
+                                <span class="data">أخرى</span>
+                                <h5 class="data">يحيي خيري رمضان العدوي</h5>
+                              </div>
+                              <div class="hover-card">
+                                <p>التاريخ : 2024/07/22</p>
+                                <p>النوع : أخرى</p>
+                                <p>المستخدم : علي محمد عوض ملحي</p>
+                                <p>الحجم : KB 52.85</p>
+                                <p>العنوان : مذكرة داخلية</p>
+                                <p>رقم المرفق : 141155</p>
+                              </div>
+                            </div>
+                            <div class="attach-box">
+                              <div class="attach-box-img">
+                                <img
+                                  src="assets/images/icons/excell.svg"
+                                  alt=""
+                                />
+                              </div>
+                              <div class="info gre">
+                                <div class="top-container">
+                                  <span class="data">1446/10/29</span>
+                                </div>
+                                <span class="data">أخرى</span>
+                                <h5 class="data">يحيي خيري رمضان العدوي</h5>
+                              </div>
+                              <div class="hover-card">
+                                <p>التاريخ : 2024/07/22</p>
+                                <p>النوع : أخرى</p>
+                                <p>المستخدم : علي محمد عوض ملحي</p>
+                                <p>الحجم : KB 52.85</p>
+                                <p>العنوان : مذكرة داخلية</p>
+                                <p>رقم المرفق : 141155</p>
+                              </div>
+                            </div>
+                            <div class="attach-box">
+                              <div class="attach-box-img">
+                                <img
+                                  src="assets/images/icons/excell.svg"
+                                  alt=""
+                                />
+                              </div>
+                              <div class="info gre">
+                                <div class="top-container">
+                                  <span class="data">1446/10/29</span>
+                                </div>
+                                <span class="data">أخرى</span>
+                                <h5 class="data">يحيي خيري رمضان العدوي</h5>
+                              </div>
+                              <div class="hover-card">
+                                <p>التاريخ : 2024/07/22</p>
+                                <p>النوع : أخرى</p>
+                                <p>المستخدم : علي محمد عوض ملحي</p>
+                                <p>الحجم : KB 52.85</p>
+                                <p>العنوان : مذكرة داخلية</p>
+                                <p>رقم المرفق : 141155</p>
+                              </div>
+                            </div>
+                            <div class="attach-box">
+                              <div class="attach-box-img">
+                                <img
+                                  src="assets/images/icons/excell.svg"
+                                  alt=""
+                                />
+                              </div>
+                              <div class="info gre">
+                                <div class="top-container">
+                                  <span class="data">1446/10/29</span>
+                                </div>
+                                <span class="data">أخرى</span>
+                                <h5 class="data">يحيي خيري رمضان العدوي</h5>
                               </div>
                               <div class="hover-card">
                                 <p>التاريخ : 2024/07/22</p>
