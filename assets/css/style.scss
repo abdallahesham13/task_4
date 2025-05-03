@@ -1006,7 +1006,6 @@
       overflow-y: auto;
       @media (min-width: 991px) {
         height: calc(100vh - 13.188rem);
-        padding-block-end: 0;
       }
       .operation-header {
         padding-block-end: 0.5rem;
@@ -1034,11 +1033,11 @@
           min-height: 10rem;
         }
       }
-      .input-group{
-        .qBtn{
+      .input-group {
+        .qBtn {
           height: 45px;
           min-width: 2.8125rem;
-          .input-search-btn{
+          .input-search-btn {
             width: 24px;
             height: 24px;
             object-fit: contain;
@@ -1046,5 +1045,177 @@
         }
       }
     }
+    .second-mail {
+      height: auto;
+      padding: 1.5rem 1rem;
+      border-radius: 0.25rem;
+      box-shadow: var(--div-shadow);
+      background-color: var(--light-color);
+      overflow-y: hidden;
+      @media (min-width: 991px) {
+        height: calc(100vh - 13.188rem);
+      }
+      .second-mail-header {
+        @include flexBetween();
+        padding-block-end: 0.7rem;
+        border-block-end: 1px solid var(--neutral-300);
+        flex-wrap: wrap;
+        .header-title {
+          font-size: 1rem;
+          font-weight: bold;
+        }
+        .attach-add {
+          .add-button {
+            width: 2.25rem;
+            height: 2.25rem;
+            border: 0;
+            border-radius: 50%;
+            @include flexCenter();
+            background-color: var(--neutral-200);
+            cursor: pointer;
+          }
+        }
+      }
+      .attachments-container {
+        height: 100%;
+        overflow-block: auto;
+        overflow-y: auto;
+        .attach-box {
+          max-width: 100%;
+          min-height: 6.5rem;
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+          gap: 1rem;
+          border: 1px solid var(--neutral-300);
+          padding: 1rem;
+          border-radius: 0.375rem;
+          position: relative;
+          font-size: 0.85rem;
+          cursor: pointer;
+          .info {
+            width: 95%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 0.2rem;
+            .data {
+              font-size: 14px;
+            }
+          }
+          .hover-card {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0px;
+            width: 200px;
+            background: #fff;
+            padding: 10px;
+            border-radius: 12px;
+            box-shadow: var(--kit-shadow);
+            color: #333;
+            text-align: right;
+            line-height: 1.8;
+            font-size: 14px;
+            z-index: 20;
+            p {
+              margin: 0.25rem 0rem;
+              font-size: 14px;
+            }
+          }
+          .attach-box-img {
+            img {
+              width: 40px;
+              height: 40px;
+              object-fit: contain;
+            }
+          }
+          &:hover {
+            background-color: var(--neutral-100);
+            .hover-card {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  input.form-control {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+  }
+
+  button.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    font-size: 14px;
+    padding: 6px 20px;
+  }
+
+  button.btn-outline-secondary {
+    font-size: 13px;
+    padding: 6px 15px;
+    border-radius: 5px;
+  }
+
+  select.form-select {
+    font-size: 13px;
+    height: 36px;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+
+  .table {
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    overflow: hidden;
+
+    th,
+    td {
+      vertical-align: middle;
+      font-size: 14px;
+      padding: 10px 12px;
+      border: 1px solid #dee2e6;
+    }
+
+    th {
+      background-color: #f1f1f1;
+      font-weight: 500;
+    }
+
+    td i {
+      color: #198754; // green for check icon
+      font-size: 16px;
+    }
+
+    &.table-hover tbody tr:hover {
+      background-color: #f5f5f5;
+    }
+
+    td:first-child {
+      text-align: right;
+    }
+  }
+
+  .badge {
+    font-size: 13px;
+    padding: 5px 10px;
+    border-radius: 3px;
+  }
+
+  .d-flex.gap-2 > * {
+    margin-left: 0 !important;
+    margin-right: 0.5rem;
+  }
+
+  .container-fluid > .row select {
+    min-width: 160px;
+  }
+
+  .container-fluid > .d-flex.justify-content-between > div button {
+    margin-left: 5px;
   }
 }

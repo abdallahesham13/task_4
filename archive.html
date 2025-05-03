@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="...." />
+    <meta name="author" content="Abdallah Hesham" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>elite</title>
+    <link
+      rel="shortcut icon"
+      href="assets/images/logo/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="assets/css/lib/fontawesome.min.css" />
+    <link rel="stylesheet" href="assets/css/lib/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <main class="main-page">
+      <div class="up-navbar">
+        <ul class="upper_nav">
+          <li class="upper_nav_item current-date">
+            <i class="far fa-calendar"></i>
+            <span class="date">2025/04/23 - 25/10/1446</span>
+          </li>
+          <li class="upper_nav_item current-time">
+            <i class="far fa-clock"></i>
+            <time class="time" id="lblTime">11:34 صباحًا</time>
+          </li>
+        </ul>
+      </div>
+
+      <nav class="navbar navbar-expand-lg" id="navbar">
+        <div class="navbar-brand">
+          <div class="hamburger-menu" id="hamburger-menu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <i class="fas fa-times close-icon"></i>
+          </div>
+
+          <a class="navbar-brand-logo" href="#">
+            <img class="logo" src="assets/images/logo/logo.svg" alt="Logo" />
+          </a>
+        </div>
+
+        <div class="navbar-links" id="navbar-links">
+          <!-- Add your links here if needed -->
+        </div>
+
+        <div class="navbar-end">
+          <div class="navbar-end__item dropdown" id="navbarDropdown">
+            <div
+              class="d-flex align-items-center gap-1 dropdown-toggle"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              id="userDropdown"
+            >
+              <div class="user-image me-2">
+                <img
+                  class="img"
+                  src="assets/images/logo/user.svg"
+                  alt="Man Profile Logo"
+                />
+              </div>
+              <span class="user-name me-2">مهند طارق محمد</span>
+              <div class="arrow-icon"></div>
+            </div>
+
+            <ul
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="userDropdown"
+            >
+              <li><a class="dropdown-item" href="#">الملف الشخصي</a></li>
+              <li><a class="dropdown-item" href="#">الإعدادات</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" href="#">تسجيل الخروج</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="main_layout">
+        <aside id="sidebar" class="sidebar sidebar-closed">
+          <button id="toggleBtn" class="btn mb-2">
+            <img
+              src="assets/images/sidemenu/list.svg"
+              class="side-btn"
+              alt=""
+            />
+          </button>
+
+          <button
+            class="sidemenu-btn btn mb-2"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainMenu"
+          >
+            <img
+              src="assets/images/sidemenu/home.svg"
+              class="side-btn"
+              alt=""
+            />
+          </button>
+          <ul id="mainMenu" class="collapse list-unstyled ps-3">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Profile</a></li>
+          </ul>
+
+          <button
+            class="sidemenu-btn btn mb-2"
+            data-bs-toggle="collapse"
+            data-bs-target="#communicationMenu"
+          >
+            <img
+              src="assets/images/sidemenu/list.svg"
+              class="side-btn"
+              alt=""
+            />
+          </button>
+          <ul id="communicationMenu" class="collapse list-unstyled ps-3">
+            <li><a href="#">Messages</a></li>
+          </ul>
+
+          <button
+            class="sidemenu-btn btn mb-2"
+            data-bs-toggle="collapse"
+            data-bs-target="#settingsMenu"
+          >
+            <img
+              src="assets/images/sidemenu/email.svg"
+              class="side-btn"
+              alt=""
+            />
+          </button>
+          <ul id="settingsMenu" class="collapse list-unstyled ps-3">
+            <li><a href="#">Settings</a></li>
+          </ul>
+        </aside>
+
+        <div class="main_content">
+          <ol class="breadcrumb m-0 py-2" aria-label="breadcrumb">
+            <li
+              class="breadcrumb-item d-flex justify-content-center align-items-center"
+            >
+              <a href="#" class="home-bc-link ms-1">
+                <img src="assets/images/icons/fa_home.svg" data-bc="" />
+              </a>
+            </li>
+            <li
+              class="breadcrumb-item d-flex justify-content-center align-items-center"
+            >
+              <a href="#" class="breadcrumb-link ms-1">البريد</a>
+            </li>
+
+            <li
+              class="breadcrumb-item d-flex justify-content-center align-items-center active"
+              aria-current="page"
+            >
+              الصادر
+            </li>
+          </ol>
+          <div class="container-fluid p-3">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <button class="btn btn-success px-4">بحث</button>
+              <input
+                type="text"
+                class="form-control w-50"
+                placeholder="ابحث برقم الوارد او رقم الأرشيف او موضوع المعاملة او رقم الخطاب"
+              />
+              <button class="btn btn-outline-secondary">عرض الجميع</button>
+            </div>
+            <div class="row mb-3">
+              <div class="col-auto">
+                <select class="form-select">
+                  <option>نوع المعاملة</option>
+                </select>
+              </div>
+              <div class="col-auto">
+                <select class="form-select">
+                  <option>الجهة</option>
+                </select>
+              </div>
+              <div class="col-auto">
+                <select class="form-select">
+                  <option>الإدارة</option>
+                </select>
+              </div>
+              <div class="col-auto">
+                <select class="form-select">
+                  <option>درجة المعاملة</option>
+                </select>
+              </div>
+              <div class="col-auto">
+                <select class="form-select">
+                  <option>المرسل</option>
+                </select>
+              </div>
+              <div class="col-auto">
+                <select class="form-select">
+                  <option>التاريخ</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-between mb-2">
+              <div>
+                <button class="btn btn-sm btn-outline-secondary">عادي</button>
+                <button class="btn btn-sm btn-outline-secondary">
+                  رئاسة نائمة عسير
+                </button>
+                <button class="btn btn-sm btn-outline-secondary">بدون</button>
+              </div>
+              <div>
+                <small>8 - 3244</small>
+              </div>
+            </div>
+
+            <table
+              class="table table-bordered table-hover text-center bg-white"
+            >
+              <thead class="table-light">
+                <tr>
+                  <th>الموضوع</th>
+                  <th>تاريخ الإنشاء</th>
+                  <th>رقم الأرشيف</th>
+                  <th>المرفقات</th>
+                  <th>الشروط</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>أصول 2</td>
+                  <td>18/01/1446</td>
+                  <td>93164</td>
+                  <td>(0) <i class="bi bi-paperclip"></i></td>
+                  <td><i class="bi bi-check-circle"></i></td>
+                </tr>
+                <tr>
+                  <td>أصول</td>
+                  <td>18/01/1446</td>
+                  <td>93161</td>
+                  <td>(0) <i class="bi bi-paperclip"></i></td>
+                  <td><i class="bi bi-check-circle"></i></td>
+                </tr>
+                <tr>
+                  <td>تست أصول 5</td>
+                  <td>17/01/1446</td>
+                  <td>93158</td>
+                  <td>(0) <i class="bi bi-paperclip"></i></td>
+                  <td><i class="bi bi-check-circle"></i></td>
+                </tr>
+                <tr>
+                  <td>offers</td>
+                  <td>17/01/1446</td>
+                  <td>93157</td>
+                  <td>(0) <i class="bi bi-paperclip"></i></td>
+                  <td><i class="bi bi-check-circle"></i></td>
+                </tr>
+                <tr>
+                  <td>معاملة ثانية جديدة للخطاب</td>
+                  <td>17/01/1446</td>
+                  <td>93155</td>
+                  <td>(0) <i class="bi bi-paperclip"></i></td>
+                  <td><i class="bi bi-check-circle"></i></td>
+                </tr>
+                <tr>
+                  <td>test sohailaa1</td>
+                  <td>17/01/1446</td>
+                  <td>93153</td>
+                  <td>(0) <i class="bi bi-paperclip"></i></td>
+                  <td><i class="bi bi-check-circle"></i></td>
+                </tr>
+                <tr>
+                  <td>letter</td>
+                  <td>17/01/1446</td>
+                  <td>93152</td>
+                  <td>(0) <i class="bi bi-paperclip"></i></td>
+                  <td><i class="bi bi-check-circle"></i></td>
+                </tr>
+                <tr>
+                  <td>letter</td>
+                  <td>17/01/1446</td>
+                  <td>93151</td>
+                  <td>(0) <i class="bi bi-paperclip"></i></td>
+                  <td><i class="bi bi-check-circle"></i></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="d-flex justify-content-between">
+              <div>صفحة <span class="badge bg-light text-dark">1</span></div>
+              <div>من <span class="badge bg-light text-dark">406</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container"></div>
+    </footer>
+
+    <script src="assets/js/lib/fontawesome.min.js"></script>
+    <script src="assets/js/lib/popper.min.js"></script>
+    <script src="assets/js/lib/bootstrap.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
