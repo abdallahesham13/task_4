@@ -163,137 +163,321 @@
               الصادر
             </li>
           </ol>
-          <div class="container-fluid p-3">
-            <div class="d-flex align-items-center gap-2 mb-3">
-              <button class="btn btn-success px-4">بحث</button>
+          <div class="archive-content p-3">
+            <div class="row mb-3">
+              <div class="col-md-12 col-lg-6 order-1 order-lg-2 archive-search">
+                <div class="search-box d-flex gap-1">
+                  <div class="w-100 box-search_start">
+                    <div class="search-icon">
+                      <img
+                        src="assets/images/icons/search.svg"
+                        class="search-icon-img"
+                        loading="lazy"
+                        alt=""
+                      />
+                    </div>
+                    <div class="search-input w-100">
+                      <input
+                        type="text"
+                        id="search_text"
+                        class="box-search__input-text"
+                        name="search"
+                        maxlength="180"
+                        placeholder="ابحث برقم الوارد او رقم الارشيف او رقم الخطاب او موضوع المعاملة او رقم القرار "
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="box-search_end d-flex align-items-center justify-content-center"
+                  >
+                    <button
+                      class="search-btn d-flex justify-content-center align-items-center"
+                    >
+                      بحث
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-1 col-12">
+                <button
+                  class="tab-filter"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <div class="tab-filter-start">
+                    <img
+                      src="assets/images/icons/mail.svg"
+                      class="tab-filter__img"
+                      loading="lazy"
+                      alt="المرسل"
+                    />
+                    <span class="tab-filter-text">نوع المعاملة</span>
+                  </div>
+                  <span class="tab-filter-arrow"></span>
+                </button>
+
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">المرسل 1</a></li>
+                  <li><a class="dropdown-item" href="#">المرسل 2</a></li>
+                  <li><a class="dropdown-item" href="#">المرسل 3</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-1 col-12">
+                <button
+                  class="tab-filter"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <div class="tab-filter-start">
+                    <img
+                      src="assets/images/icons/dist.svg"
+                      class="tab-filter__img"
+                      loading="lazy"
+                      alt="المرسل"
+                    />
+                    <span class="tab-filter-text">الجهة</span>
+                  </div>
+                  <span class="tab-filter-arrow"></span>
+                </button>
+
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">المرسل 1</a></li>
+                  <li><a class="dropdown-item" href="#">المرسل 2</a></li>
+                  <li><a class="dropdown-item" href="#">المرسل 3</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-1 col-12">
+                <button
+                  class="tab-filter"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <div class="tab-filter-start">
+                    <img
+                      src="assets/images/icons/manage.svg"
+                      class="tab-filter__img"
+                      loading="lazy"
+                      alt="المرسل"
+                    />
+                    <span class="tab-filter-text">الإدارة</span>
+                  </div>
+                  <span class="tab-filter-arrow"></span>
+                </button>
+
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">المرسل 1</a></li>
+                  <li><a class="dropdown-item" href="#">المرسل 2</a></li>
+                  <li><a class="dropdown-item" href="#">المرسل 3</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-1 col-12">
+                <button
+                  class="tab-filter"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <div class="tab-filter-start">
+                    <img
+                      src="assets/images/icons/bag.svg"
+                      class="tab-filter__img"
+                      loading="lazy"
+                      alt="المرسل"
+                    />
+                    <span class="tab-filter-text">درجة المعاملة</span>
+                  </div>
+                  <span class="tab-filter-arrow"></span>
+                </button>
+
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">المرسل 1</a></li>
+                  <li><a class="dropdown-item" href="#">المرسل 2</a></li>
+                  <li><a class="dropdown-item" href="#">المرسل 3</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-1 col-12">
+                <button
+                  class="tab-filter"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <div class="tab-filter-start">
+                    <img
+                      src="assets/images/icons/send-01.svg"
+                      class="tab-filter__img"
+                      loading="lazy"
+                      alt="المرسل"
+                    />
+                    <span class="tab-filter-text">المرسل</span>
+                  </div>
+                  <span class="tab-filter-arrow"></span>
+                </button>
+
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">المرسل 1</a></li>
+                  <li><a class="dropdown-item" href="#">المرسل 2</a></li>
+                  <li><a class="dropdown-item" href="#">المرسل 3</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-1 col-12">
+                <button
+                  class="tab-filter"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <div class="tab-filter-start">
+                    <img
+                      src="assets/images/icons/calendar.svg"
+                      class="tab-filter__img"
+                      loading="lazy"
+                      alt="المرسل"
+                    />
+                    <span class="tab-filter-text">التاريخ</span>
+                  </div>
+                  <span class="tab-filter-arrow"></span>
+                </button>
+
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">المرسل 1</a></li>
+                  <li><a class="dropdown-item" href="#">المرسل 2</a></li>
+                  <li><a class="dropdown-item" href="#">المرسل 3</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div
+              class="view-all d-flex justify-content-between align-items-center mb-2"
+            >
+              <div class="desc-buttons">
+                <div class="desc">
+                  <span class="desc-text">عادية</span>
+                </div>
+                <div class="desc">
+                  <span class="desc-text">رئاسة أمانة عسير</span>
+                </div>
+                <div class="desc">
+                  <span class="desc-text">بدون</span>
+                  <button class="close-btn">
+                    <i class="fas fa-times close-icon"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div>
+                <button
+                  class="qBtn d-flex justify-content-center align-items-center gap-1"
+                  role="button"
+                >
+                  <span>عرض الجميع</span>
+
+                  <i class="fas fa-redo"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <table class="table table-bordered text-center bg-white mb-0">
+                <thead class="table-light">
+                  <tr>
+                    <th width="40px"></th>
+                    <th width="600px">الموضوع</th>
+                    <th width="300px">تاريخ الإنشاء</th>
+                    <th width="300px">رقم الأرشيف</th>
+                    <th width="300px">المرفقات</th>
+                    <th width="300px">الشروحات</th>
+                    <th width="40px"></th>
+                  </tr>
+                </thead>
+                <tbody class="table-body">
+                  <tr>
+                    <td class="align-middle">
+                      <button
+                        class="toggle-btn collapsed"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapse1"
+                        aria-expanded="false"
+                        aria-controls="collapse1"
+                      >
+                        <i class="fa fa-chevron-down"></i>
+                      </button>
+                    </td>
+                    <td>تعميم هذا النص</td>
+                    <td>20/05/1445</td>
+                    <td>8965325</td>
+                    <td class="table-attach"><i class="fas fa-paperclip"></i> (4)</td>
+                    <td>
+                      <img
+                        src="assets/images/icons/table-explains.svg"
+                        class="table-explains"
+                        alt=""
+                      />
+                    </td>
+                    <td>
+                      <div class="table-dots-circle">
+                        <button
+                          class="dropdown-toggle table-dots"
+                          type="button"
+                          id="dropdownMenuButton1"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          <img
+                            src="assets/images/icons/table-dots.svg"
+                            data-img="svg"
+                            class="circle-dots_img"
+                          />
+                        </button>
+                        <ul
+                          class="dropdown-menu dropdown-items kit-shadow"
+                          aria-labelledby="dropdownMenuButton1"
+                        >
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="collapse collapse-row" id="collapse1">
+                    <td colspan="7" class="text-start p-3">
+                      <strong>منتج الموضوع:</strong> يمكن أن يستبدل<br />
+                      <strong>رقم المعاملة:</strong> 152526548<br />
+                      <strong>تاريخ المعاملة:</strong> 1445/03/22<br />
+                      <strong>تاريخ الصادر:</strong> يمكن أن يستبدل<br />
+                      <strong>الرد على المعاملة:</strong> 5 ردود<br />
+                      <strong>المعاملة:</strong><br />
+                      لدى: يمكن أن يستبدل في نفس المسلك. لقد تم مواد النص في
+                      مواد النص النص النص النص النص، حيث يمكنك أن تزود مثل<br /><br />
+                      هذا النص هو مثال لنص يمكن أن يستبدل في نفس المسلك
+                    </td>
+                  </tr>
+                
+                </tbody>
+              </table>
+            </div>
+
+            <div
+              class="d-flex justify-content-end align-items-center gap-2 table-pagination mt-5"
+            >
+              <button class="btn btn-light p-1" aria-label="التالي">
+                <img src="assets/images/icons/right-arrow.svg" alt="" />
+              </button>
+
+              <span>صفحة</span>
+
               <input
                 type="text"
-                class="form-control w-50"
-                placeholder="ابحث برقم الوارد او رقم الأرشيف او موضوع المعاملة او رقم الخطاب"
+                class="form-control text-center px-2 py-1"
+                value="1"
               />
-              <button class="btn btn-outline-secondary">عرض الجميع</button>
-            </div>
-            <div class="row mb-3">
-              <div class="col-auto">
-                <select class="form-select">
-                  <option>نوع المعاملة</option>
-                </select>
-              </div>
-              <div class="col-auto">
-                <select class="form-select">
-                  <option>الجهة</option>
-                </select>
-              </div>
-              <div class="col-auto">
-                <select class="form-select">
-                  <option>الإدارة</option>
-                </select>
-              </div>
-              <div class="col-auto">
-                <select class="form-select">
-                  <option>درجة المعاملة</option>
-                </select>
-              </div>
-              <div class="col-auto">
-                <select class="form-select">
-                  <option>المرسل</option>
-                </select>
-              </div>
-              <div class="col-auto">
-                <select class="form-select">
-                  <option>التاريخ</option>
-                </select>
-              </div>
-            </div>
 
-            <div class="d-flex justify-content-between mb-2">
-              <div>
-                <button class="btn btn-sm btn-outline-secondary">عادي</button>
-                <button class="btn btn-sm btn-outline-secondary">
-                  رئاسة نائمة عسير
-                </button>
-                <button class="btn btn-sm btn-outline-secondary">بدون</button>
-              </div>
-              <div>
-                <small>8 - 3244</small>
-              </div>
-            </div>
+              <span>من <strong>406</strong></span>
 
-            <table
-              class="table table-bordered table-hover text-center bg-white"
-            >
-              <thead class="table-light">
-                <tr>
-                  <th>الموضوع</th>
-                  <th>تاريخ الإنشاء</th>
-                  <th>رقم الأرشيف</th>
-                  <th>المرفقات</th>
-                  <th>الشروط</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>أصول 2</td>
-                  <td>18/01/1446</td>
-                  <td>93164</td>
-                  <td>(0) <i class="bi bi-paperclip"></i></td>
-                  <td><i class="bi bi-check-circle"></i></td>
-                </tr>
-                <tr>
-                  <td>أصول</td>
-                  <td>18/01/1446</td>
-                  <td>93161</td>
-                  <td>(0) <i class="bi bi-paperclip"></i></td>
-                  <td><i class="bi bi-check-circle"></i></td>
-                </tr>
-                <tr>
-                  <td>تست أصول 5</td>
-                  <td>17/01/1446</td>
-                  <td>93158</td>
-                  <td>(0) <i class="bi bi-paperclip"></i></td>
-                  <td><i class="bi bi-check-circle"></i></td>
-                </tr>
-                <tr>
-                  <td>offers</td>
-                  <td>17/01/1446</td>
-                  <td>93157</td>
-                  <td>(0) <i class="bi bi-paperclip"></i></td>
-                  <td><i class="bi bi-check-circle"></i></td>
-                </tr>
-                <tr>
-                  <td>معاملة ثانية جديدة للخطاب</td>
-                  <td>17/01/1446</td>
-                  <td>93155</td>
-                  <td>(0) <i class="bi bi-paperclip"></i></td>
-                  <td><i class="bi bi-check-circle"></i></td>
-                </tr>
-                <tr>
-                  <td>test sohailaa1</td>
-                  <td>17/01/1446</td>
-                  <td>93153</td>
-                  <td>(0) <i class="bi bi-paperclip"></i></td>
-                  <td><i class="bi bi-check-circle"></i></td>
-                </tr>
-                <tr>
-                  <td>letter</td>
-                  <td>17/01/1446</td>
-                  <td>93152</td>
-                  <td>(0) <i class="bi bi-paperclip"></i></td>
-                  <td><i class="bi bi-check-circle"></i></td>
-                </tr>
-                <tr>
-                  <td>letter</td>
-                  <td>17/01/1446</td>
-                  <td>93151</td>
-                  <td>(0) <i class="bi bi-paperclip"></i></td>
-                  <td><i class="bi bi-check-circle"></i></td>
-                </tr>
-              </tbody>
-            </table>
-
-            <div class="d-flex justify-content-between">
-              <div>صفحة <span class="badge bg-light text-dark">1</span></div>
-              <div>من <span class="badge bg-light text-dark">406</span></div>
+              <button class="btn btn-light p-1" aria-label="السابق">
+                <img src="assets/images/icons/left-arrow.svg" alt="" />
+              </button>
             </div>
           </div>
         </div>
