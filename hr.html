@@ -42,13 +42,43 @@
             <i class="fas fa-times close-icon"></i>
           </div>
 
-          <a class="navbar-brand-logo" href="#">
+          <a class="navbar-brand-logo" href="index.html">
             <img class="logo" src="assets/images/logo/logo.svg" alt="Logo" />
           </a>
         </div>
 
-        <div class="navbar-links" id="navbar-links">
-          <!-- Add your links here if needed -->
+        <div class="navbar-links sidebar" id="navbar-links">
+          <a
+            href="#"
+            class="sidemenu-btn btn mb-2"
+            data-bs-toggle="collapse"
+            data-bs-target="#communicationMenu"
+          >
+            <img src="assets/images/sidemenu/bag.svg" class="side-btn" alt="" />
+            <span class="sidenav-text">البريد</span>
+          </a>
+          <ul id="communicationMenu" class="collapse list-unstyled ps-3">
+            <li><a href="index.html">صادر</a></li>
+            <li><a href="archive.html">الأرشيف</a></li>
+            <li><a href="internalMail.html">إنشاء بريد داخلي</a></li>
+          </ul>
+
+          <a
+            href="#"
+            class="sidemenu-btn btn mb-2"
+            data-bs-toggle="collapse"
+            data-bs-target="#settingsMenu"
+          >
+            <img
+              src="assets/images/sidemenu/email.svg"
+              class="side-btn"
+              alt=""
+            />
+            <span class="sidenav-text">الموارد البشرية</span>
+          </a>
+          <ul id="settingsMenu" class="collapse list-unstyled ps-3">
+            <li><a href="hr.html">الترقيات</a></li>
+          </ul>
         </div>
 
         <div class="navbar-end">
@@ -68,17 +98,62 @@
                 />
               </div>
               <span class="user-name me-2">مهند طارق محمد</span>
-              <div class="arrow-icon"></div>
+              <img
+                src="assets/images/icons/chevron-down-black.svg"
+                class="arrow-icon"
+                loading="lazy"
+                alt=""
+              />
             </div>
 
             <ul
-              class="dropdown-menu dropdown-menu-end"
+              class="dropdown-menu dropdown-menu-end dropdown-items"
               aria-labelledby="userDropdown"
             >
-              <li><a class="dropdown-item" href="#">الملف الشخصي</a></li>
-              <li><a class="dropdown-item" href="#">الإعدادات</a></li>
-              <li><hr class="dropdown-divider" /></li>
-              <li><a class="dropdown-item" href="#">تسجيل الخروج</a></li>
+              <li>
+                <a class="dropdown-item px-0" href="#">
+                  <img
+                    src="assets/images/icons/profile.svg"
+                    class="user-profile"
+                    loading="lazy"
+                    alt=""
+                  />
+                  البوابة الداخلية لإدارة خدمات الموظف
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item px-0" href="#">
+                  <img
+                    src="assets/images/icons/search-profile.svg"
+                    class="user-search"
+                    loading="lazy"
+                    alt=""
+                  />
+                  دليل جهات الإتصال</a
+                >
+              </li>
+              <li class="form-switch">
+                <div class="switch">
+                  <input
+                    class="form-check-input switch-input"
+                    type="checkbox"
+                  />
+                  <label class="form-check-label dropdown-item p-0"
+                    >عرض معاملات الوارد</label
+                  >
+                </div>
+              </li>
+              <li class="w-100">
+                <a class="dropdown-item px-0 logout" href="#">
+                  <img
+                    src="assets/images/icons/power.svg"
+                    class="user-search"
+                    loading="lazy"
+                    alt=""
+                  />
+                  تسجيل الخروج
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -92,40 +167,26 @@
               class="side-btn"
               alt=""
             />
+            <span class="sidenav-text">أغلق القائمة</span>
           </button>
 
-          <button
-            class="sidemenu-btn btn mb-2"
-            data-bs-toggle="collapse"
-            data-bs-target="#mainMenu"
-          >
-            <img
-              src="assets/images/sidemenu/home.svg"
-              class="side-btn"
-              alt=""
-            />
-          </button>
-          <ul id="mainMenu" class="collapse list-unstyled ps-3">
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Profile</a></li>
-          </ul>
-
-          <button
+          <a
+            href="#"
             class="sidemenu-btn btn mb-2"
             data-bs-toggle="collapse"
             data-bs-target="#communicationMenu"
           >
-            <img
-              src="assets/images/sidemenu/list.svg"
-              class="side-btn"
-              alt=""
-            />
-          </button>
+            <img src="assets/images/sidemenu/bag.svg" class="side-btn" alt="" />
+            <span class="sidenav-text">البريد</span>
+          </a>
           <ul id="communicationMenu" class="collapse list-unstyled ps-3">
-            <li><a href="#">Messages</a></li>
+            <li><a href="index.html">صادر</a></li>
+            <li><a href="archive.html">الأرشيف</a></li>
+            <li><a href="internalMail.html">إنشاء بريد داخلي</a></li>
           </ul>
 
-          <button
+          <a
+            href="#"
             class="sidemenu-btn btn mb-2"
             data-bs-toggle="collapse"
             data-bs-target="#settingsMenu"
@@ -135,13 +196,14 @@
               class="side-btn"
               alt=""
             />
-          </button>
+            <span class="sidenav-text">الموارد البشرية</span>
+          </a>
           <ul id="settingsMenu" class="collapse list-unstyled ps-3">
-            <li><a href="#">Settings</a></li>
+            <li><a href="hr.html">الترقيات</a></li>
           </ul>
         </aside>
 
-        <div class="main_content  flex-grow-1">
+        <div class="main_content flex-grow-1">
           <div class="header d-flex justify-content-between align-items-center">
             <ol class="breadcrumb m-0 py-2" aria-label="breadcrumb">
               <li
@@ -305,64 +367,66 @@
               </div>
             </div>
             <div class="tabs-container mt-4">
-              <ul class="nav nav-tabs p-0" id="tabs" role="tablist">
-                <li class="nav-item" role="presentation">
-                  <button
-                    class="nav-link"
-                    data-bs-toggle="tab"
-                    data-bs-target="#evaluation"
-                    type="button"
-                    role="tab"
-                  >
-                    تقييم الأداء الوظيفي
-                  </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button
-                    class="nav-link"
-                    data-bs-toggle="tab"
-                    data-bs-target="#training"
-                    type="button"
-                    role="tab"
-                  >
-                    برامج التدريب والتطوير
-                  </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button
-                    class="nav-link"
-                    data-bs-toggle="tab"
-                    data-bs-target="#courses"
-                    type="button"
-                    role="tab"
-                  >
-                    الدورات الإلكترونية
-                  </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button
-                    class="nav-link"
-                    data-bs-toggle="tab"
-                    data-bs-target="#achievements"
-                    type="button"
-                    role="tab"
-                  >
-                    المبادرات والإنجازات
-                  </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button
-                    class="nav-link active"
-                    id="pledge-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#pledge"
-                    type="button"
-                    role="tab"
-                  >
-                    التعهد
-                  </button>
-                </li>
-              </ul>
+              <div class="wrapper">
+                <ul class="nav nav-tabs p-0" id="tabs" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link"
+                      data-bs-toggle="tab"
+                      data-bs-target="#evaluation"
+                      type="button"
+                      role="tab"
+                    >
+                      تقييم الأداء الوظيفي
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link"
+                      data-bs-toggle="tab"
+                      data-bs-target="#training"
+                      type="button"
+                      role="tab"
+                    >
+                      برامج التدريب والتطوير
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link"
+                      data-bs-toggle="tab"
+                      data-bs-target="#courses"
+                      type="button"
+                      role="tab"
+                    >
+                      الدورات الإلكترونية
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link"
+                      data-bs-toggle="tab"
+                      data-bs-target="#achievements"
+                      type="button"
+                      role="tab"
+                    >
+                      المبادرات والإنجازات
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link active"
+                      id="pledge-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#pledge"
+                      type="button"
+                      role="tab"
+                    >
+                      التعهد
+                    </button>
+                  </li>
+                </ul>
+              </div>
 
               <div class="tab-content mt-4" id="tabsContent">
                 <div
@@ -507,8 +571,8 @@
                       تحتاج إلى عدد أكبر من الفقرات يتيح لك مولد النص العربى
                       زيادة عدد الفقرات كما تريد النص لن يبدو مقسما ولا يحوي
                       أخطاء لغوية مولد النص العربى مفيد لمصممي المواقع على وجه
-                      الخصوص حيث يحتاج العميل فى كثير من الأحيان أن يطلع علي
-                      على صورة حقيقية لتصميم الموقع
+                      الخصوص حيث يحتاج العميل فى كثير من الأحيان أن يطلع علي على
+                      صورة حقيقية لتصميم الموقع
                     </p>
                   </div>
                 </div>
@@ -516,14 +580,20 @@
             </div>
           </div>
           <div class="request-promotion-buttons mt-3">
-            <div class="left-side d-flex justify-content-end align-items-center gap-2 group-btn">
-              <button class="qBtn d-flex justify-content-center align-items-center gap-2">
+            <div
+              class="left-side d-flex justify-content-end align-items-center gap-2 group-btn"
+            >
+              <button
+                class="qBtn d-flex justify-content-center align-items-center gap-2"
+              >
                 <img src="assets/images/icons/file.svg" />
 
                 <span>حفظ مؤقت</span>
               </button>
 
-              <button class="qBtn d-flex justify-content-center align-items-center gap-2 primary-btn">
+              <button
+                class="qBtn d-flex justify-content-center align-items-center gap-2 primary-btn"
+              >
                 <img src="assets/images/icons/send.svg" />
 
                 <span>توقيع و إرسال </span>
