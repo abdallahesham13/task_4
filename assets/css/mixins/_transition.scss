@@ -1,5 +1,0 @@
-@charset "UTF-8";
-
-@mixin transition($property: all, $duration: 0.3s, $function: ease, $delay: 0s) {
-	@include vendor-prefix(transition, $property $duration $function $delay);
-}

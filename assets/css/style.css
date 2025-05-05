@@ -1,17 +1,17 @@
 @charset "UTF-8";
 :root {
   --primary-color: #41843a;
-  --primary-color-100: #EDF6EC;
+  --primary-color-100: #edf6ec;
   --secondary-color: #6e7887;
   --dark-color: #1d1d35;
   --light-color: #fff;
   --gray-color: #edf1f5;
   --neutral-700: #6e7887;
-  --neutral-500:#98A1AE;
+  --neutral-500: #98a1ae;
   --neutral-400: #d1d5db;
-  --neutral-300: #E2E5E9;
-  --neutral-200: #EDF1F5;
-  --neutral-100: #F9FAFB;
+  --neutral-300: #e2e5e9;
+  --neutral-200: #edf1f5;
+  --neutral-100: #f9fafb;
   --main-gradient: linear-gradient(to left, #8cc285 0%, #466143 100%);
   --primary-filter: invert(46%) sepia(18%) saturate(1323%) hue-rotate(67deg)
     brightness(92%) contrast(92%);
@@ -29,17 +29,17 @@
 
 :root {
   --primary-color: #41843a;
-  --primary-color-100: #EDF6EC;
+  --primary-color-100: #edf6ec;
   --secondary-color: #6e7887;
   --dark-color: #1d1d35;
   --light-color: #fff;
   --gray-color: #edf1f5;
   --neutral-700: #6e7887;
-  --neutral-500:#98A1AE;
+  --neutral-500: #98a1ae;
   --neutral-400: #d1d5db;
-  --neutral-300: #E2E5E9;
-  --neutral-200: #EDF1F5;
-  --neutral-100: #F9FAFB;
+  --neutral-300: #e2e5e9;
+  --neutral-200: #edf1f5;
+  --neutral-100: #f9fafb;
   --main-gradient: linear-gradient(to left, #8cc285 0%, #466143 100%);
   --primary-filter: invert(46%) sepia(18%) saturate(1323%) hue-rotate(67deg)
     brightness(92%) contrast(92%);
@@ -259,9 +259,9 @@ body {
 }
 .up-navbar .upper_nav .upper_nav_item {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
   align-items: center;
+  align-content: center;
+  justify-content: center;
   gap: 0.35rem;
   text-align: center;
 }
@@ -275,8 +275,9 @@ body {
   padding-block: 0.35rem;
   padding-inline: 0.9375rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  align-content: center;
+  justify-content: space-between;
   flex-wrap: nowrap;
   position: sticky;
   top: 0;
@@ -353,6 +354,7 @@ body {
 .navbar .navbar-end .navbar-end__item {
   display: flex;
   align-items: center;
+  align-content: center;
   justify-content: center;
   gap: 0.5rem;
   cursor: pointer;
@@ -684,7 +686,7 @@ body {
   border-bottom-color: var(--primary-color);
 }
 .main_content .tabs-contain .search-box .box-search_end .search-btn {
-  padding-block: 0.77rem;
+  padding-block: 0.85rem;
   padding-inline: 1rem;
   background: var(--main-gradient);
   border: 1px solid;
@@ -716,8 +718,9 @@ body {
 }
 .main_content .tab-content .transactions .transaction-head {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  align-content: center;
+  justify-content: space-between;
   padding: 1rem 0.8rem;
   border-radius: 0.3125rem;
   border-bottom: 1px solid var(--neutral-400);
@@ -1022,8 +1025,9 @@ body {
 }
 .main_content .tab-content .qBox .tab-pane .attach-container .card-content .explain-box .explain-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  align-content: center;
+  justify-content: space-between;
   margin-bottom: 8px;
 }
 @media (max-width: 575px) {
@@ -1048,8 +1052,9 @@ body {
   top: 0;
   border-bottom-left-radius: 5px;
   display: flex;
-  justify-content: center;
   align-items: center;
+  align-content: center;
+  justify-content: center;
   background: var(--primary-color);
   color: #fff;
   font-size: 14px;
@@ -1242,6 +1247,7 @@ body {
   background-color: #5c5d5f;
   display: flex;
   align-items: center;
+  align-content: center;
   justify-content: center;
 }
 .main_content .content-container .tabs-container .tab-content .pledge-form .custom-radio-disabled .form-check-input:disabled + .form-check-label {
@@ -1458,7 +1464,6 @@ body {
   }
 }
 .main_content .archive-content .archive-search .search-box .box-search_start {
-  padding-block: 0.77rem;
   padding-inline: 0.8rem;
   position: relative;
   border-radius: 0.3305rem;
@@ -1570,9 +1575,14 @@ body {
 .main_content .archive-content .view-all .desc-buttons .desc .close-btn {
   border: none;
   background: transparent;
+  height: 10px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
 }
 .main_content .archive-content .view-all .desc-buttons .desc .close-btn .close-icon {
-  font-size: 12px;
+  font-size: 10px;
 }
 .main_content .archive-content .table-bordered > :not(caption) > * > * {
   border: none;
@@ -1603,8 +1613,9 @@ body {
   position: relative;
   border-radius: 50%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  align-content: center;
+  justify-content: center;
   cursor: pointer;
   background-color: var(--neutral-200);
   transition: all 0.33s ease-in-out;
