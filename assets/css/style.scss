@@ -1101,6 +1101,7 @@
         filter: var(--primary-filter);
       }
       .input-group {
+        position: relative;
         .qBtn {
           height: 45px;
           min-width: 2.8125rem;
@@ -1109,6 +1110,13 @@
             height: 24px;
             object-fit: contain;
           }
+        }
+        .internal-pen {
+          position: absolute;
+          top: 50%;
+          left: 15px;
+          transform: translateY(-50%);
+          cursor: pointer;
         }
       }
     }
@@ -1356,6 +1364,13 @@
         background-color: var(--neutral-200) !important;
         th {
           font-size: 14px;
+          @include media(){
+            font-size: 12px;
+            min-width: 6.25rem;
+          }
+        }
+        .small-th{
+          min-width: 3.25rem;
         }
       }
       tbody tr:nth-child(6n + 1),

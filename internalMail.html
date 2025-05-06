@@ -385,12 +385,20 @@
                     <label class="form-label"
                       >الإحالة <span class="text-danger">*</span></label
                     >
-                    <div class="input-group">
+                    <div class="input-group forward-input">
                       <input
                         type="text"
                         class="form-control input disabled"
                         placeholder="برجاء تحديد أصل لإرسال المعاملة"
                         disabled
+                      />
+                      <img
+                        src="assets/images/icons/internal-pen.svg"
+                        class="internal-pen"
+                        loading="lazy"
+                        alt=""
+                        data-bs-toggle="modal"
+                        data-bs-target="#forwardModal"
                       />
                     </div>
                   </div>
@@ -401,7 +409,12 @@
               <div class="second-mail-header">
                 <h4 class="header-title">المرفقات</h4>
                 <div class="attach-add">
-                  <button class="add-button">
+                  <button
+                    type="button"
+                    class="add-button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#attachmentModal"
+                  >
                     <img
                       src="assets/images/icons/plus.svg"
                       class="add-img"
@@ -478,11 +491,896 @@
           </div>
         </div>
       </div>
-    </main>
 
-    <footer>
-      <div class="container"></div>
-    </footer>
+      <div
+        class="modal fade attachments-modal"
+        id="attachmentModal"
+        tabindex="-1"
+        aria-labelledby="attachmentModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content p-3">
+            <div
+              class="modal-header border-0 d-flex justify-content-between align-items-center"
+            >
+              <h5 class="modal-title" id="attachmentModalLabel">
+                إضافة مرفقات
+              </h5>
+              <button
+                type="button"
+                class="btn-close m-0"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="mb-3">
+                <label class="form-label mb-2">نوع المرفق</label>
+                <select class="form-select input">
+                  <option selected>أخرى</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label mb-2"
+                  >عنوان المرفق <span class="text-danger star">*</span></label
+                >
+                <textarea class="form-control input title-input"></textarea>
+              </div>
+
+              <div class="upload-box mb-4" id="drop-area">
+                <input
+                  type="file"
+                  id="fileElem"
+                  multiple
+                  style="display: none"
+                />
+                <label for="fileElem" class="text-center file-label">
+                  <img
+                    src="assets/images/icons/add-attach.svg"
+                    alt="Upload Icon"
+                  />
+                  <div><strong>ارفع المرفقات هنا</strong></div>
+                  <small class="text-muted"
+                    >يمكنك سحب ملفاتك من جهازك إلى هنا</small
+                  >
+                </label>
+              </div>
+            </div>
+            <div class="modal-footer border-0 py-0">
+              <button type="button" class="btn qBtn">حفظ</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="modal fade forward-modal"
+        id="forwardModal"
+        tabindex="-1"
+        aria-labelledby="forwardModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content" dir="rtl">
+            <div class="modal-header border-0">
+              <h5 class="modal-title">إحالة</h5>
+              <button
+                type="button"
+                class="btn-close m-0"
+                data-bs-dismiss="modal"
+                aria-label="إغلاق"
+              ></button>
+            </div>
+
+            <div class="modal-body">
+              <ul
+                class="nav nav-pills justify-content-center mb-4"
+                id="radioTabs"
+                role="tablist"
+              >
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link radio-tab active"
+                    id="tab1-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#tab1"
+                    type="button"
+                    role="tab"
+                  >
+                    عموم الإدارة
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link radio-tab"
+                    id="tab2-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#tab2"
+                    type="button"
+                    role="tab"
+                  >
+                    المفضلة
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link radio-tab"
+                    id="tab3-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#tab3"
+                    type="button"
+                    role="tab"
+                  >
+                    موظف محدد
+                  </button>
+                </li>
+              </ul>
+
+              <div class="tab-content">
+                <div
+                  class="tab-pane fade show active"
+                  id="tab1"
+                  role="tabpanel"
+                  aria-labelledby="tab1-tab"
+                >
+                  <div
+                    class="table-responsive"
+                    style="max-height: 400px; overflow-y: auto"
+                  >
+                    <table
+                      class="table text-center align-middle"
+                      style="min-width: 900px"
+                    >
+                      <thead class="table-light">
+                        <tr>
+                          <th colspan="1" class="align-middle">أصل</th>
+                          <th colspan="1" class="align-middle">صورة</th>
+                          <th colspan="2">
+                            <input
+                              type="text"
+                              class="form-control input"
+                              placeholder="ابحث باسم الإدارة أو الموظف"
+                            />
+                          </th>
+                          <th colspan="1"></th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <tr>
+                          <td class="align-middle">
+                            <label class="table-radio">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="mainSelection"
+                              />
+                            </label>
+                          </td>
+
+                          <td class="align-middle">
+                            <label class="table-checkbox align-middle">
+                              <input type="checkbox" />
+                            </label>
+                          </td>
+
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control input disabled"
+                              value="إدارة مايورينا"
+                              disabled
+                            />
+                          </td>
+                          <td>
+                            <select class="form-select input">
+                              <option>التوجيه</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control input"
+                              placeholder="الشرح"
+                            />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">
+                            <label class="table-radio">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="mainSelection"
+                              />
+                            </label>
+                          </td>
+
+                          <td class="align-middle">
+                            <label class="table-checkbox align-middle">
+                              <input type="checkbox" />
+                            </label>
+                          </td>
+
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control input disabled"
+                              value="إدارة مايورينا"
+                              disabled
+                            />
+                          </td>
+                          <td>
+                            <select class="form-select input">
+                              <option>التوجيه</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control input"
+                              placeholder="الشرح"
+                            />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">
+                            <label class="table-radio">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="mainSelection"
+                              />
+                            </label>
+                          </td>
+
+                          <td class="align-middle">
+                            <label class="table-checkbox align-middle">
+                              <input type="checkbox" />
+                            </label>
+                          </td>
+
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control input disabled"
+                              value="إدارة مايورينا"
+                              disabled
+                            />
+                          </td>
+                          <td>
+                            <select class="form-select input">
+                              <option>التوجيه</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control input"
+                              placeholder="الشرح"
+                            />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">
+                            <label class="table-radio">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="mainSelection"
+                              />
+                            </label>
+                          </td>
+
+                          <td class="align-middle">
+                            <label class="table-checkbox align-middle">
+                              <input type="checkbox" />
+                            </label>
+                          </td>
+
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control input disabled"
+                              value="إدارة مايورينا"
+                              disabled
+                            />
+                          </td>
+                          <td>
+                            <select class="form-select input">
+                              <option>التوجيه</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control input"
+                              placeholder="الشرح"
+                            />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">
+                            <label class="table-radio">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="mainSelection"
+                              />
+                            </label>
+                          </td>
+
+                          <td class="align-middle">
+                            <label class="table-checkbox align-middle">
+                              <input type="checkbox" />
+                            </label>
+                          </td>
+
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control input disabled"
+                              value="إدارة مايورينا"
+                              disabled
+                            />
+                          </td>
+                          <td>
+                            <select class="form-select input">
+                              <option>التوجيه</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control input"
+                              placeholder="الشرح"
+                            />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">
+                            <label class="table-radio">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="mainSelection"
+                              />
+                            </label>
+                          </td>
+
+                          <td class="align-middle">
+                            <label class="table-checkbox align-middle">
+                              <input type="checkbox" />
+                            </label>
+                          </td>
+
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control input disabled"
+                              value="إدارة مايورينا"
+                              disabled
+                            />
+                          </td>
+                          <td>
+                            <select class="form-select input">
+                              <option>التوجيه</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control input"
+                              placeholder="الشرح"
+                            />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">
+                            <label class="table-radio">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="mainSelection"
+                              />
+                            </label>
+                          </td>
+
+                          <td class="align-middle">
+                            <label class="table-checkbox align-middle">
+                              <input type="checkbox" />
+                            </label>
+                          </td>
+
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control input disabled"
+                              value="إدارة مايورينا"
+                              disabled
+                            />
+                          </td>
+                          <td>
+                            <select class="form-select input">
+                              <option>التوجيه</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control input"
+                              placeholder="الشرح"
+                            />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">
+                            <label class="table-radio">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="mainSelection"
+                              />
+                            </label>
+                          </td>
+
+                          <td class="align-middle">
+                            <label class="table-checkbox align-middle">
+                              <input type="checkbox" />
+                            </label>
+                          </td>
+
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control input disabled"
+                              value="إدارة مايورينا"
+                              disabled
+                            />
+                          </td>
+                          <td>
+                            <select class="form-select input">
+                              <option>التوجيه</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control input"
+                              placeholder="الشرح"
+                            />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">
+                            <label class="table-radio">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="mainSelection"
+                              />
+                            </label>
+                          </td>
+
+                          <td class="align-middle">
+                            <label class="table-checkbox align-middle">
+                              <input type="checkbox" />
+                            </label>
+                          </td>
+
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control input disabled"
+                              value="إدارة مايورينا"
+                              disabled
+                            />
+                          </td>
+                          <td>
+                            <select class="form-select input">
+                              <option>التوجيه</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control input"
+                              placeholder="الشرح"
+                            />
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="tab2"
+                  role="tabpanel"
+                  aria-labelledby="tab2-tab"
+                >
+                  <div
+                    class="table-responsive"
+                    style="max-height: 400px; overflow-y: auto"
+                  >
+                    <table class="table text-center align-middle">
+                      <thead class="table-light">
+                        <tr>
+                          <th colspan="1" class="align-middle">أصل</th>
+                          <th colspan="1" class="align-middle">صورة</th>
+                          <th colspan="2">
+                            <input
+                              type="text"
+                              class="form-control input"
+                              placeholder="ابحث باسم الإدارة أو الموظف"
+                            />
+                          </th>
+                          <th colspan="1"></th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <tr>
+                          <td class="align-middle">
+                            <label class="table-radio">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="mainSelection"
+                              />
+                            </label>
+                          </td>
+
+                          <td class="align-middle">
+                            <label class="table-checkbox align-middle">
+                              <input type="checkbox" />
+                            </label>
+                          </td>
+
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control input"
+                              value="إدارة مايورينا"
+                              disabled
+                            />
+                          </td>
+                          <td>
+                            <select class="form-select input">
+                              <option>التوجيه</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control input"
+                              placeholder="الشرح"
+                            />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">
+                            <label class="table-radio">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="mainSelection"
+                              />
+                            </label>
+                          </td>
+
+                          <td class="align-middle">
+                            <label class="table-checkbox align-middle">
+                              <input type="checkbox" />
+                            </label>
+                          </td>
+
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control input"
+                              value="إدارة مايورينا"
+                              disabled
+                            />
+                          </td>
+                          <td>
+                            <select class="form-select input">
+                              <option>التوجيه</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control input"
+                              placeholder="الشرح"
+                            />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">
+                            <label class="table-radio">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="mainSelection"
+                              />
+                            </label>
+                          </td>
+
+                          <td class="align-middle">
+                            <label class="table-checkbox align-middle">
+                              <input type="checkbox" />
+                            </label>
+                          </td>
+
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control input"
+                              value="إدارة مايورينا"
+                              disabled
+                            />
+                          </td>
+                          <td>
+                            <select class="form-select input">
+                              <option>التوجيه</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control input"
+                              placeholder="الشرح"
+                            />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">
+                            <label class="table-radio">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="mainSelection"
+                              />
+                            </label>
+                          </td>
+
+                          <td class="align-middle">
+                            <label class="table-checkbox align-middle">
+                              <input type="checkbox" />
+                            </label>
+                          </td>
+
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control input"
+                              value="إدارة مايورينا"
+                              disabled
+                            />
+                          </td>
+                          <td>
+                            <select class="form-select input">
+                              <option>التوجيه</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control input"
+                              placeholder="الشرح"
+                            />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">
+                            <label class="table-radio">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="mainSelection"
+                              />
+                            </label>
+                          </td>
+
+                          <td class="align-middle">
+                            <label class="table-checkbox align-middle">
+                              <input type="checkbox" />
+                            </label>
+                          </td>
+
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control input"
+                              value="إدارة مايورينا"
+                              disabled
+                            />
+                          </td>
+                          <td>
+                            <select class="form-select input">
+                              <option>التوجيه</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control input"
+                              placeholder="الشرح"
+                            />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">
+                            <label class="table-radio">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="mainSelection"
+                              />
+                            </label>
+                          </td>
+
+                          <td class="align-middle">
+                            <label class="table-checkbox align-middle">
+                              <input type="checkbox" />
+                            </label>
+                          </td>
+
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control input"
+                              value="إدارة مايورينا"
+                              disabled
+                            />
+                          </td>
+                          <td>
+                            <select class="form-select input">
+                              <option>التوجيه</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control input"
+                              placeholder="الشرح"
+                            />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">
+                            <label class="table-radio">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="mainSelection"
+                              />
+                            </label>
+                          </td>
+
+                          <td class="align-middle">
+                            <label class="table-checkbox align-middle">
+                              <input type="checkbox" />
+                            </label>
+                          </td>
+
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control input"
+                              value="إدارة مايورينا"
+                              disabled
+                            />
+                          </td>
+                          <td>
+                            <select class="form-select input">
+                              <option>التوجيه</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control input"
+                              placeholder="الشرح"
+                            />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">
+                            <label class="table-radio">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="mainSelection"
+                              />
+                            </label>
+                          </td>
+
+                          <td class="align-middle">
+                            <label class="table-checkbox align-middle">
+                              <input type="checkbox" />
+                            </label>
+                          </td>
+
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control input"
+                              value="إدارة مايورينا"
+                              disabled
+                            />
+                          </td>
+                          <td>
+                            <select class="form-select input">
+                              <option>التوجيه</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control input"
+                              placeholder="الشرح"
+                            />
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <div
+                  class="tab-pane fade"
+                  id="tab3"
+                  role="tabpanel"
+                  aria-labelledby="tab3-tab"
+                >
+                  <div class="row">
+                    <div class="col-lg-6 col-12 mb-3">
+                      <label class="form-label mb-2"
+                        >اسم الإدارة <span class="text-danger">*</span></label
+                      >
+                      <select class="form-select input">
+                        <option selected>اختر الإدارة</option>
+                      </select>
+                    </div>
+                    <div class="col-lg-6 col-12 mb-3">
+                      <label class="form-label mb-2"
+                        >اسم الموظف <span class="text-danger">*</span></label
+                      >
+                      <select class="form-select input">
+                        <option selected>إختر الموظف</option>
+                      </select>
+                    </div>
+                    <div class="col-lg-6 col-12 mb-3">
+                      <label class="form-label mb-2"
+                        >التوجيه <span class="text-danger">*</span></label
+                      >
+                      <select class="form-select input">
+                        <option selected>لإكمال اللازم</option>
+                      </select>
+                    </div>
+                    <div class="col-12 mb-3">
+                      <label class="form-label mb-2">الشرح</label>
+                      <textarea
+                        class="form-control input title-input"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="modal-footer border-0 justify-content-end align-items-center"
+            >
+              <button type="button" class="qBtn">إرسال</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <script src="assets/js/lib/fontawesome.min.js"></script>
     <script src="assets/js/lib/popper.min.js"></script>
