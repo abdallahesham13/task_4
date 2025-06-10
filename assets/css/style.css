@@ -489,7 +489,7 @@ body {
 .navbar .navbar-links {
   display: none;
 }
-@media (max-width: 767px) {
+@media (max-width: 992px) {
   .navbar .navbar-links {
     display: flex;
     flex-direction: column;
@@ -508,7 +508,7 @@ body {
     z-index: 1000;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 992px) {
   .navbar .navbar-links.active {
     right: 0;
     opacity: 1;
@@ -550,7 +550,7 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-@media (max-width: 767px) {
+@media (max-width: 992px) {
   .navbar .navbar-end .navbar-end__item .user-name {
     display: none;
   }
@@ -619,7 +619,7 @@ body {
 .navbar .navbar-end .navbar-end__item:hover .user-name {
   color: var(--primary-color);
 }
-@media (max-width: 767px) {
+@media (max-width: 992px) {
   .navbar .hamburger-menu {
     display: flex;
   }
@@ -636,7 +636,7 @@ body {
 }
 
 .sidebar {
-  height: calc(100dvh - 5rem);
+  height: 100%;
   min-width: 300px;
   background-color: #fff;
   box-shadow: var(--div-shadow);
@@ -726,7 +726,7 @@ body {
   flex-direction: column;
   justify-content: start;
 }
-@media (max-width: 767px) {
+@media (max-width: 992px) {
   .sidebar.sidebar-closed {
     display: none;
   }
@@ -763,7 +763,7 @@ body {
 .main_content .breadcrumb-item::before {
   padding: 0px;
 }
-@media (max-width: 767px) {
+@media (max-width: 992px) {
   .main_content .breadcrumb-item {
     font-size: 14px;
   }
@@ -816,7 +816,7 @@ body {
 .main_content .tabs-contain .nav-link.active .tab-text {
   color: var(--light-color);
 }
-@media (max-width: 767px) {
+@media (max-width: 992px) {
   .main_content .tabs-contain .search-box {
     margin-bottom: 10px;
   }
@@ -870,7 +870,7 @@ body {
 .main_content .tab-content {
   margin-top: 10px;
 }
-@media (max-width: 767px) {
+@media (max-width: 992px) {
   .main_content .tab-content .close-card {
     padding-left: 0px;
     margin-top: 10px;
@@ -1636,7 +1636,7 @@ body {
 .main_content .archive-content .archive-search {
   margin-inline-start: auto;
 }
-@media (max-width: 767px) {
+@media (max-width: 992px) {
   .main_content .archive-content .archive-search .search-box {
     margin-bottom: 10px;
   }
@@ -1731,7 +1731,7 @@ body {
   justify-content: start;
   gap: 10px;
 }
-@media (max-width: 767px) {
+@media (max-width: 992px) {
   .main_content .archive-content .view-all .desc-buttons {
     display: none;
   }
@@ -1775,7 +1775,7 @@ body {
 .main_content .archive-content .table .table-light th {
   font-size: 14px;
 }
-@media (max-width: 767px) {
+@media (max-width: 992px) {
   .main_content .archive-content .table .table-light th {
     font-size: 12px;
     min-width: 6.25rem;
